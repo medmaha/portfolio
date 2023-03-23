@@ -1,0 +1,48 @@
+.__nav__drawer {
+    left: 0;
+    top: 65px;
+    opacity: 0;
+    z-index: 70;
+    width: 320px;
+    position: fixed;
+    pointer-events: none;
+    backdrop-filter: blur(5px);
+    height: calc(100vh - 65px);
+    transform: translateX(-100vw);
+    transition: transform 250ms ease-out, opacity 250ms ease-out;
+    background-color: rgb(229, 231, 235, 0.8);
+    box-shadow: 1px 0 3px rgb(153, 153, 153, 0.5);
+}
+
+.dark .__nav__drawer {
+    background-color: rgb(17, 24, 39, 0.8);
+    /* border-right: 1px solid #333; */
+}
+
+.__nav__drawer.open {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(0);
+}
+
+@media (min-width: 400px) {
+    .__nav__drawer {
+        max-width: 350px;
+    }
+}
+@media (min-width: 450px) {
+    .__nav__drawer {
+        max-width: 400px;
+    }
+}
+@media (min-width: 500px) {
+    .__nav__drawer {
+        max-width: 450px;
+    }
+}
+
+@media (min-width: 630px) {
+    .__nav__drawer {
+        display: none;
+    }
+}

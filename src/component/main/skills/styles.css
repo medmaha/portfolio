@@ -1,0 +1,16 @@
+.__skills__lang {
+    opacity: 0;
+    transition: 200ms ease-in;
+}
+
+.animate_left {
+    transform: translateX(-100vw);
+}
+.animate_right {
+    transform: translateX(100%);
+}
+
+.__animate_lang {
+    opacity: 1;
+    transform: translateX(0);
+}

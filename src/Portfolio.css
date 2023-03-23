@@ -1,0 +1,84 @@
+:root {
+    --primary-bg: rgba(0, 0, 0, 0.89);
+    --primary-bg-light: hwb(240 3% 49%);
+    --primary-color: #080324;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: rgb(241, 245, 249);
+    color: #333;
+}
+
+.card {
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.card-bold {
+    box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.3);
+}
+
+.dark body {
+    background-color: rgb(17, 24, 39);
+    color: #999;
+}
+
+textarea,
+select,
+input {
+    background-color: inherit;
+    color: #1f232d;
+    letter-spacing: 1px;
+    font-weight: lighter;
+    border-radius: 5px;
+}
+
+.dark textarea,
+.dark select,
+.dark input {
+    background-color: #e2e8f0;
+    color: #111827;
+    letter-spacing: 1px;
+    font-weight: lighter;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 1rem;
+    background-color: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background-color: #9ba1a8d2;
+}
+
+.dark ::-webkit-scrollbar {
+    width: 10px;
+    background-color: hsl(221, 39%, 20%);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background-color: rgb(121, 143, 158);
+}
+
+.portfolio>* {
+    animation: loaded 450ms ease forwards;
+    transform: translateY(-100vh);
+    transform-origin: center center;
+}
+
+
+@keyframes loaded {
+    0% {
+        transform: translateY(-100vh);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}

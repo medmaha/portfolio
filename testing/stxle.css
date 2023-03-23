@@ -1,0 +1,47 @@
+#container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 200vh;
+    position: relative;
+}
+
+#viewport {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#viewport span {
+    content: 0;
+    width: 500px;
+    height: calc(100vh - 200px);
+    outline: 1px solid #333;
+    margin-top: 100px;
+}
+
+#container {
+    background-color: black;
+}
+
+.card {
+    opacity: 0;
+    transition: transform 250ms ease-in;
+    /* transform: translateX(-100%); */
+    border: 1px solid #333;
+    width: fit-content;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    transition: 300ms;
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateX(0);
+}
