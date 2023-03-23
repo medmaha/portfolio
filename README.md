@@ -8,9 +8,9 @@ I am a self-taught full-stack developer with over 2 years of experience. During 
 
 You can find some of my projects on my [GitHub profile](https://github.com/medmaha). Currently, I have 25 repositories on my GitHub, where you can find various projects that I have worked on. Some of my notable projects include:
 
--   [Insert project name here](https://github.com/medmaha/chatvite)
--   [Insert project name here](https://github.com/medmaha/tech-electrical)
--   [Insert project name here](https://github.com/yourusername/celesup)
+-   [Celesup](https://github.com/medmaha/celesup)
+-   [ChatVite](https://github.com/medmaha/chatvite)
+-   [Tech Electric](https://github.com/yourusername/tech-electrical)
 
 ## Portfolio
 
