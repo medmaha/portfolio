@@ -18,4 +18,4 @@ My portfolio showcases my skills and experience as a full-stack developer. It in
 
 ## Contact
 
-You can reach me via email at [insert email here]. I am open to new opportunities and would love to hear from you. Thank you for your time and consideration.
+You can reach me via email at [toure925@outlook.com]. I am open to new opportunities and would love to hear from you. Thank you for your time and consideration.
