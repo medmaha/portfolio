@@ -6,6 +6,7 @@ import Main from "./component/main"
 import Footer from "./component/footer/Footer"
 
 import { SocialMedia, Modal, Drawer } from "./component/utils"
+import { useLayoutEffect } from "react"
 
 export const GlobalContext = createContext()
 
@@ -16,7 +17,7 @@ function Portfolio() {
     const [resume, toggleResume] = useState(false)
 
     const appRef = useRef()
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (localStorage.getItem("theme") === "dark") {
             setDarkTheme(true)
         }
