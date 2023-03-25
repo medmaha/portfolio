@@ -3,7 +3,13 @@ import React, { useRef, useEffect, useState } from "react"
 export default function Project({ data }) {
     return (
         <div className="__project card min-h-[150px] md:min-h-[170px] flex flex-col items-center p-3 bg-gray-100 dark:bg-slate-800">
-            <div className="flex-1 w-full ">
+            <span
+                title={data.name}
+                className="text-lg cursor-default inline-block text-center sm:text-xl md:text-2xl font-semibold mt-1 mb-3 tracking-wide truncate w-full"
+            >
+                {data.name}
+            </span>
+            <div className="flex-1 w-full pb-4">
                 <ImageLazyLoader
                     src={`/assets/img/${data.thumbnail}`}
                     onClick={() => {
@@ -19,12 +25,7 @@ export default function Project({ data }) {
                     className="cursor-pointer bg-slate-800 outline-gray-500 outline outline-1 h-[150px] object-fill sm:min-h-[170px]  md:max-h-[200px]"
                 />
             </div>
-            <span
-                title={data.name}
-                className="text-lg cursor-default inline-block text-center sm:text-xl md:text-2xl font-semibold mt-1 mb-3 tracking-wide truncate w-full"
-            >
-                {data.name}
-            </span>
+
             <p className="text-center pb-2 text-sm tracking-wide px-2 font-light text-gray-700 dark:text-gray-300">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus
                 illo necessitatibus reiciendis consequatur in sint{" "}

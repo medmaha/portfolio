@@ -39,12 +39,15 @@ export default function AboutMe() {
                         developer.
                     </p>
                     <div className="flex justify-center items-center mt-4 pt-2">
-                        <button
-                            onClick={() => toggleResume(true)}
+                        <a
+                            target={"_blank"}
+                            rel="noreferrer"
+                            href="/assets/resume.pdf"
+                            // onClick={() => toggleResume(true)}
                             className="bg-sky-500 hover:bg-sky-600 transition font-semibold tracking-wide text-white rounded-md py-2 px-4 capitalize"
                         >
                             my resume
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <h3 className="text-center text-2xl pt-4 tracking-wide font-semibold">

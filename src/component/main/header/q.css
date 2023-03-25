@@ -1,0 +1,7 @@
+.quote {
+    color: #1b1bee
+}
+
+.dark .quote {
+    color: #00ffffca;
+}

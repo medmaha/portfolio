@@ -1,6 +1,6 @@
 import "./styles.css"
 import Hero from "./Hero"
-import Quotes from "./Quote"
+import Quotes from "./Q"
 
 export default function Header() {
     return (

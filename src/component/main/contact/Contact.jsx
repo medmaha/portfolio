@@ -16,7 +16,7 @@ export default function Contact() {
             {/* <h3 className="text-center pt-[25px] text-3xl mb-[25px] p-3 tracking-wide font-bold">
                 CTA
             </h3> */}
-            <div className="flex flex-col items-center card-bold rounded-xl md:rounded-full pb-[25px] bg-gray-100 dark:bg-slate-800">
+            <div className="flex max-w-[700px] flex-col items-center card-bold rounded-xl md:rounded-full pb-[25px] bg-gray-100 dark:bg-slate-800">
                 <h2 className="text-center text-xl sm:text-2xl pt-[25px] pb-[5px] tracking-wide font-semibold">
                     CTA
                 </h2>
@@ -32,7 +32,8 @@ export default function Contact() {
                                 type="text"
                                 id="name"
                                 name="name"
-                                className="outline-1 sm:w-[95%] outline-gray-400 outline py-1 px-2 w-full"
+                                placeholder="your name"
+                                className=" sm:w-[95%] outline-gray-400 outline-[2px] focus:outline-sky-500 outline py-1 px-2 w-full"
                             />
                         </div>
                         <div className="flex flex-col gap-1">
@@ -41,7 +42,8 @@ export default function Contact() {
                                 type="text"
                                 id="email"
                                 name="email"
-                                className="outline-1 sm:w-[95%] outline-gray-400 outline py-1 px-2 w-full"
+                                placeholder="email address"
+                                className=" sm:w-[95%] outline-gray-400 outline-[2px] focus:outline-sky-500 outline py-1 px-2 w-full"
                             />
                         </div>
                         <div className="flex flex-col gap-1">
@@ -49,8 +51,9 @@ export default function Contact() {
                             <input
                                 type="text"
                                 id="subject"
+                                placeholder="subject"
                                 name="subject"
-                                className="outline-1 sm:w-[95%] outline-gray-400 outline py-1 px-2 w-full"
+                                className=" sm:w-[95%] outline-gray-400 outline-[2px] focus:outline-sky-500 outline py-1 px-2 w-full"
                             />
                         </div>
                     </div>
@@ -59,7 +62,8 @@ export default function Contact() {
                         <textarea
                             id="message"
                             name="message"
-                            className="outline-1 outline-gray-400 outline h-full w-full py-1 px-2 md:min-w-[350px] max-h-[240px] overflow-y-auto"
+                            placeholder="message"
+                            className=" resize-none outline-gray-400 outline-[2px] focus:outline-sky-500 outline h-full w-full py-1 px-2 md:min-w-[350px] max-h-[240px] overflow-y-auto"
                         ></textarea>
                     </div>
                 </form>

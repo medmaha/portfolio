@@ -37,7 +37,7 @@ input {
 .dark select,
 .dark input {
     background-color: #e2e8f0;
-    color: #111827;
+    /* color: #111827; */
     letter-spacing: 1px;
     font-weight: lighter;
 }
@@ -66,7 +66,7 @@ input {
     background-color: rgb(121, 143, 158);
 }
 
-.portfolio>* {
+.portfolio>div {
     animation: loaded 450ms ease forwards;
     transform: translateY(-100vh);
     transform-origin: center center;

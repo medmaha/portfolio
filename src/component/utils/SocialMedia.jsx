@@ -6,6 +6,8 @@ import ContactForm from "./ContactForm"
 export default function SocialMedia() {
     const { toggleModal } = useContext(GlobalContext)
 
+    const myEmail = "toure925@outlook.com"
+
     function toggleContactModal() {
         // console.log(context)
 
@@ -277,7 +279,7 @@ export default function SocialMedia() {
                         <a
                             onClick={toggleContactModal}
                             className=""
-                            href="#"
+                            href={`mailto:${myEmail}`}
                             data-email
                             title="Whatsapp"
                         >

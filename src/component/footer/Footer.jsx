@@ -10,9 +10,9 @@ export default function Footer() {
                     dark:text-primary-dark
                     h-full"
                 >
-                    Copyright © 2022 Mahamed Toure
+                    Copyright © 2023 Mahamed Toure
                 </span>
-                <span
+                {/* <span
                     className="text-center opacity-90 text-sm underline underline-offset-4
                     text-blue-500
                     dark:text-primary-dark
@@ -20,7 +20,7 @@ export default function Footer() {
                     dark:decoration-primary-dark"
                 >
                     https://www.muhamedtoure.org
-                </span>
+                </span> */}
             </div>
         </div>
     )

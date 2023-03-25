@@ -6,7 +6,6 @@ import Main from "./component/main"
 import Footer from "./component/footer/Footer"
 
 import { SocialMedia, Modal, Drawer } from "./component/utils"
-import Resume from "./component/resume"
 
 export const GlobalContext = createContext()
 
@@ -64,9 +63,11 @@ function Portfolio() {
                 }}
             >
                 <Navbar changeTheme={setDarkTheme} />
-                {resume && <Resume />}
+                {/* {resume && <Resume />} */}
                 <SocialMedia />
-                <Main />
+                <div className="portfolio">
+                    <Main />
+                </div>
                 <Footer />
             </GlobalContext.Provider>
         </div>
