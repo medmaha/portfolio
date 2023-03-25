@@ -1,7 +1,7 @@
 import "./socialMedia.css"
 import { useContext } from "react"
 import { GlobalContext } from "../../Portfolio"
-import ContactForm from "./ContactForm"
+import WhatsappContact from "./WhatsappContact"
 
 export default function SocialMedia() {
     const { toggleModal } = useContext(GlobalContext)
@@ -10,10 +10,9 @@ export default function SocialMedia() {
 
     function toggleContactModal() {
         // console.log(context)
-
         toggleModal({
             state: true,
-            children: <ContactForm />,
+            children: <WhatsappContact />,
         })
     }
 
@@ -251,8 +250,14 @@ export default function SocialMedia() {
                         </a>
                     </li>
                     {/* Todo */}
-                    <li className="  flex justify-center">
-                        <a className="" href="#" data-whatsapp title="Whatsapp">
+                    <li className=" flex justify-center">
+                        <button
+                            className=""
+                            href="#"
+                            onClick={toggleContactModal}
+                            data-whatsapp
+                            title="Whatsapp"
+                        >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"
@@ -273,12 +278,12 @@ export default function SocialMedia() {
                                     </g>
                                 </g>
                             </svg>
-                        </a>
+                        </button>
                     </li>
                     <li className="  flex justify-center">
                         <a
-                            onClick={toggleContactModal}
                             className=""
+                            target={"_blank"}
                             href={`mailto:${myEmail}`}
                             data-email
                             title="Whatsapp"

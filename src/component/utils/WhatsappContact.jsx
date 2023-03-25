@@ -3,10 +3,13 @@ import React from "react"
 export default function ContactForm() {
     return (
         <div className="flex flex-col gap-3">
-            <h3 className="text-center capitalize text-xl font-bold tracking-wider">
-                #CTA
+            <h3 className="text-center capitalize text-xl font-semibold tracking-wider">
+                #CTA Whatsapp
             </h3>
-            <div className="max-w-[400px] flex flex-col gap-3">
+            <h2 className="text-center capitalize text-3xl mt-4 py-4 font-bold tracking-wider">
+                +220 310 1417
+            </h2>
+            {/* <div className="max-w-[400px] flex flex-col gap-3">
                 <div className="flex flex-col gap-1">
                     <label htmlFor="email text-lg">
                         Email
@@ -66,7 +69,7 @@ export default function ContactForm() {
                         Submit
                     </span>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
