@@ -34,7 +34,7 @@ export default function Contact() {
     return (
         <section
             data-snap
-            className="flex flex-col items-center mb-[55px] sm:px-3 mx-1"
+            className="flex flex-col items-center pb-[55px] sm:px-3 mx-1"
             id="contactMe"
         >
             <div className="mt-[70px]"></div>
@@ -44,58 +44,63 @@ export default function Contact() {
             {/* <h3 className="text-center pt-[25px] text-3xl mb-[25px] p-3 tracking-wide font-bold">
                 CTA
             </h3> */}
-            <div className="flex max-w-[400px] sm:max-w-[700px] w-full flex-col items-center card-bold rounded-xl sm:rounded-full pb-4 sm:pb-[25px] bg-gray-100 dark:bg-slate-800">
+            <div
+                data-contact-wrapper
+                className="flex w-full flex-col items-center card-bold pb-4 sm:pb-[25px] bg-gray-100 dark:bg-slate-800"
+            >
                 <h2 className="text-center text-xl sm:text-2xl pt-[25px] pb-[5px] tracking-wide font-semibold">
                     #CTA
                 </h2>
                 <form
                     action=""
                     onSubmit={handleFormSubmit}
-                    className="flex flex-col sm:flex-row gap-3 p-3 pb-0 w-full"
+                    className="gap-3 p-3 w-full"
                 >
-                    <div className="flex flex-col sm:gap-1 gap-2 w-full">
-                        <div className="flex flex-col gap-1">
-                            <label htmlFor="name">Name</label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                placeholder="your name"
-                                className="outline-gray-400 outline-[2px] focus:outline-sky-500 outline py-2 px-2 w-full min-w-[200px] sm:min-w-[300px]"
-                            />
+                    <div data-contact className="flex gap-3 p-3 w-full">
+                        <div className="flex flex-col sm:gap-1 gap-2 w-full">
+                            <div className="flex flex-col gap-1">
+                                <label htmlFor="name">Name</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    placeholder="your name"
+                                    className="outline-gray-400 outline-[2px] focus:outline-sky-500 outline py-2 px-2 w-full min-w-[200px] sm:min-w-[300px]"
+                                />
+                            </div>
+                            <div className="flex flex-col gap-1">
+                                <label htmlFor="email">Email</label>
+                                <input
+                                    type="text"
+                                    id="email"
+                                    name="email"
+                                    placeholder="email address"
+                                    className="outline-gray-400 outline-[2px] focus:outline-sky-500 outline py-2 px-2 w-full min-w-[200px] sm:min-w-[300px]"
+                                />
+                            </div>
+                            <div className="flex flex-col gap-1">
+                                <label htmlFor="">Subject</label>
+                                <input
+                                    type="text"
+                                    id="subject"
+                                    placeholder="subject"
+                                    name="subject"
+                                    className="outline-gray-400 outline-[2px] focus:outline-sky-500 outline py-2 px-2 w-full min-w-[200px] sm:min-w-[300px]"
+                                />
+                            </div>
                         </div>
                         <div className="flex flex-col gap-1">
-                            <label htmlFor="email">Email</label>
-                            <input
-                                type="text"
-                                id="email"
-                                name="email"
-                                placeholder="email address"
-                                className="outline-gray-400 outline-[2px] focus:outline-sky-500 outline py-2 px-2 w-full min-w-[200px] sm:min-w-[300px]"
-                            />
-                        </div>
-                        <div className="flex flex-col gap-1">
-                            <label htmlFor="">Subject</label>
-                            <input
-                                type="text"
-                                id="subject"
-                                placeholder="subject"
-                                name="subject"
-                                className="outline-gray-400 outline-[2px] focus:outline-sky-500 outline py-2 px-2 w-full min-w-[200px] sm:min-w-[300px]"
-                            />
+                            <label htmlFor="message">Message</label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                placeholder="message"
+                                className="resize-none outline-gray-400 outline-[2px] focus:outline-sky-500 outline h-full w-full py-2 px-2 min-w-[200px] sm:min-w-[300px] overflow-y-auto"
+                            ></textarea>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-1">
-                        <label htmlFor="message">Message</label>
-                        <textarea
-                            id="message"
-                            name="message"
-                            placeholder="message"
-                            className="resize-none outline-gray-400 outline-[2px] focus:outline-sky-500 outline h-full w-full py-2 px-2 min-w-[200px] sm:min-w-[300px] overflow-y-auto"
-                        ></textarea>
-                    </div>
-                    <div className="flex pt-4 flex-col gap-1 w-full">
-                        <button className="flex-1 mt-2 py-2 text-lg rounded dark:bg-primary-dark text-card-light dark:text-card-dark">
+                    <div className="mt-4 flex items-end justify-center">
+                        <button className="p-4 w-full max-w-[200px] text-xl rounded dark:bg-primary-dark text-card-light dark:text-card-dark">
                             Submit
                         </button>
                     </div>

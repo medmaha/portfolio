@@ -1,3 +1,23 @@
 form {
     transform: scale(0.9);
 }
+
+[data-contact-wrapper] {
+    border-radius: 12px;
+    max-width: 500px;
+}
+
+[data-contact] {
+    flex-flow: column;
+}
+
+@media (min-width:720px) {
+    [data-contact-wrapper] {
+        border-radius: 9999px;
+        max-width: 720px;
+    }
+
+    [data-contact] {
+        flex-flow: row;
+    }
+}
