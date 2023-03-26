@@ -2,12 +2,15 @@
     --primary-bg: rgba(0, 0, 0, 0.89);
     --primary-bg-light: hwb(240 3% 49%);
     --primary-color: #080324;
+
+    --bg: rgb(241, 245, 249);
+    --color: #333;
 }
 
 body {
     font-family: "Poppins", sans-serif;
-    background-color: rgb(241, 245, 249);
-    color: #333;
+    background-color: var(--bg);
+    color: var(--color);
 }
 
 .card {
@@ -18,9 +21,18 @@ body {
     box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.3);
 }
 
-.dark body {
-    background-color: rgb(17, 24, 39);
-    color: #999;
+.dark {
+    --bg: rgb(17, 24, 39);
+    --color: #999;
+}
+
+
+.primary-bg {
+    background-color: var(--bg);
+}
+
+.primary-color {
+    background-color: var(--color);
 }
 
 textarea,

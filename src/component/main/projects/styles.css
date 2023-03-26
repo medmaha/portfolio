@@ -19,6 +19,18 @@
     outline-width: 2px;
 }
 
+.__project__card .intro {
+    display: block;
+    overflow: hidden;
+    max-height: 5rem;
+    -webkit-line-clamp: 4;
+    display: box;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
 .__animate__in {
     opacity: 1;
     transform: translateY(0);
@@ -29,9 +41,11 @@
         opacity: 0;
         transform: translateY(50%);
     }
+
     5% {
         transform: translateY(0);
     }
+
     100% {
         opacity: 1;
     }

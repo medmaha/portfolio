@@ -1,0 +1,17 @@
+#detailsWrapper {
+    opacity: 0;
+    transition: opacity 250ms;
+}
+
+#detailsWrapper.open {
+    opacity: 1;
+}
+
+#detailsWrapper.close {
+    opacity: 0;
+}
+
+
+[data-project-desc] p {
+    text-align: center;
+}

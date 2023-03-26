@@ -5,37 +5,29 @@ import Navbar from "./component/navbar"
 import Main from "./component/main"
 import Footer from "./component/footer/Footer"
 
-import { SocialMedia, Modal, Drawer } from "./component/utils"
+import { SocialMedia, Modal, Drawer, ProjectDetail } from "./component/utils"
 import { useLayoutEffect } from "react"
+import { useMediaScreens } from "./hooks"
 
 export const GlobalContext = createContext()
 
 function Portfolio() {
     const [darkTheme, setDarkTheme] = useState()
-    const [modal, setModalOptions] = useState({})
-    const [drawer, setDrawerOptions] = useState({})
-    const [resume, toggleResume] = useState(false)
+    const [modal, toggleModal] = useState(false)
+    const [drawer, toggleDrawer] = useState(false)
+    const [projectDetail, setProjectDetail] = useState(null)
 
     const appRef = useRef()
+
+    useEffect(() => {
+        if (drawer || modal) setProjectDetail(null)
+    }, [drawer, modal])
+
     useLayoutEffect(() => {
         if (localStorage.getItem("theme") === "dark") {
             setDarkTheme(true)
         }
     }, [])
-
-    function toggleModal(options = {}) {
-        setModalOptions({
-            ...modal,
-            ...options,
-        })
-    }
-
-    function toggleDrawer(options = {}) {
-        setDrawerOptions({
-            ...drawer,
-            ...options,
-        })
-    }
 
     return (
         <div
@@ -45,25 +37,28 @@ function Portfolio() {
                 darkTheme ? "dark text-slate-200 bg-gray-900" : "bg-slate-100"
             } overflow-x-hidden`}
         >
-            <Modal
-                state={modal.state}
-                children={modal.children}
-                instanceDispatcher={toggleModal}
-            />
-            {/* <Drawer state={drawer.state} callback={drawer.callback} /> */}
-
             <GlobalContext.Provider
                 value={{
                     appRef,
+
                     darkTheme,
                     setDarkTheme,
                     modal,
                     toggleModal,
+                    drawer,
                     toggleDrawer,
-                    toggleResume,
+                    projectDetail,
+                    setProjectDetail,
                 }}
             >
+                {projectDetail && <ProjectDetail project={projectDetail} />}
+
+                {modal && <Modal instanceDispatcher={toggleModal} />}
+
                 <Navbar changeTheme={setDarkTheme} />
+
+                {drawer && <Drawer callback={toggleDrawer} />}
+
                 {/* {resume && <Resume />} */}
                 <SocialMedia />
                 <div className="portfolio">

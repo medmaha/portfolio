@@ -1,18 +1,12 @@
 import "./modalStyles.css"
 import React, { useEffect, useState } from "react"
 
-export default function Modal({ children, state, instanceDispatcher }) {
-    const [open, setOpen] = useState(state)
-
-    useEffect(() => {
-        setOpen(state)
-    }, [state])
+export default function Modal({ children, instanceDispatcher }) {
+    const [open, setOpen] = useState(true)
 
     function closeModal() {
         setOpen(false)
-        instanceDispatcher({
-            state: null,
-        })
+        instanceDispatcher(null)
     }
 
     return (

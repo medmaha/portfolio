@@ -4,11 +4,13 @@ import { programmingLang } from "./DATA"
 
 export default function Languages() {
     return (
-        <div className="flex gap-4 flex-wrap justify-between items-center  w-[95%] md:w-[90%]">
-            {programmingLang.map((lang) => {
-                return <Lang key={lang.name} lang={lang} />
-            })}
-        </div>
+        <>
+            <div className="flex gap-4 flex-wrap justify-between items-center w-[95%] md:w-[90%]">
+                {programmingLang.map((lang) => {
+                    return <Lang key={lang.name} lang={lang} />
+                })}
+            </div>
+        </>
     )
 }
 

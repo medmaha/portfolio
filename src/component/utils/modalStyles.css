@@ -17,6 +17,7 @@
 .__modal {
     position: fixed;
     top: 65px;
+    left: 0;
     width: 100vw;
     height: calc(100vh - 65px);
     z-index: 70;

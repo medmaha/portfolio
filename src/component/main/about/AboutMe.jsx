@@ -44,7 +44,7 @@ export default function AboutMe() {
                             rel="noreferrer"
                             href="/assets/resume.pdf"
                             // onClick={() => toggleResume(true)}
-                            className="bg-sky-500 hover:bg-sky-600 transition font-semibold tracking-wide text-white rounded-md py-2 px-4 capitalize"
+                            className="bg-sky-500 hover:bg-sky-600 min-w-[200px] text-center transition font-semibold tracking-wide text-white rounded-md py-2 px-4 capitalize"
                         >
                             my resume
                         </a>

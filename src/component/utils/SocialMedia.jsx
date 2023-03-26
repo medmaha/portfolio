@@ -8,24 +8,17 @@ export default function SocialMedia() {
 
     const myEmail = "toure925@outlook.com"
 
-    function toggleContactModal() {
-        // console.log(context)
-        toggleModal({
-            state: true,
-            children: <WhatsappContact />,
-        })
-    }
-
     return (
         <>
-            <div className="fixed z-10 top-[65px] left-[0] w-full max-w-[35px] md:max-w-[50px] h-[calc(100vh-65px)]">
-                <ul className="h-full flex justify-evenly flex-col ">
+            <div className="fixed z-10 primary-bg top-[65px] left-[0] w-full max-w-[35px] md:max-w-[50px] h-[calc(100vh-65px)]">
+                <ul className="h-full flex justify-center gap-10 flex-col ">
                     <li className="flex justify-center">
                         <a
                             className=""
                             href="https://github.com/medmaha"
                             data-github
-                            target={"_blank"}
+                            target="_blank"
+                            rel="noreferrer"
                             title="Github"
                         >
                             <svg
@@ -46,7 +39,7 @@ export default function SocialMedia() {
                         <a
                             className=""
                             href="https://www.linkedin.com/in/medmaha/"
-                            target={"_blank"}
+                            target="_blank"
                             rel="noreferrer"
                             data-linkedin
                             title="Linkedin"
@@ -80,7 +73,7 @@ export default function SocialMedia() {
                             data-twitter
                             title="Twitter"
                             rel="noreferrer"
-                            target={"_blank"}
+                            target="_blank"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +104,7 @@ export default function SocialMedia() {
                             data-instagram
                             rel="noreferrer"
                             title="Instagram"
-                            target={"_blank"}
+                            target="_blank"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -225,7 +218,8 @@ export default function SocialMedia() {
                             href="https://www.facebook.com/mahamedtoure4/"
                             data-facebook
                             title="Facebook"
-                            target={"_blank"}
+                            target="_blank"
+                            rel="noreferrer"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -249,12 +243,13 @@ export default function SocialMedia() {
                             </svg>
                         </a>
                     </li>
-                    {/* Todo */}
                     <li className=" flex justify-center">
                         <button
                             className=""
                             href="#"
-                            onClick={toggleContactModal}
+                            onClick={() => {
+                                toggleModal((prev) => !prev)
+                            }}
                             data-whatsapp
                             title="Whatsapp"
                         >
@@ -283,7 +278,8 @@ export default function SocialMedia() {
                     <li className="  flex justify-center">
                         <a
                             className=""
-                            target={"_blank"}
+                            target="_blank"
+                            rel="noreferrer"
                             href={`mailto:${myEmail}`}
                             data-email
                             title="Whatsapp"

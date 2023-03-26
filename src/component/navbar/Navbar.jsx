@@ -4,9 +4,8 @@ import { GlobalContext } from "../../Portfolio"
 import NavLinks from "./NavLinks"
 
 export default function Navbar() {
-    const { toggleDrawer, setDarkTheme, darkTheme } = useContext(GlobalContext)
-
-    const navDrawerRef = useRef()
+    const { drawer, toggleDrawer, setDarkTheme, darkTheme } =
+        useContext(GlobalContext)
 
     useEffect(() => {
         // console.log(context)
@@ -21,13 +20,6 @@ export default function Navbar() {
             localStorage.setItem("theme", "dark")
         }
         setDarkTheme((prev) => !prev)
-    }
-    function toggleNavDrawer() {
-        setOpenDrawer((prev) => !prev)
-        toggleDrawer({
-            state: !drawerIsOpen,
-            callback: setOpenDrawer,
-        })
     }
 
     return (
@@ -72,7 +64,7 @@ export default function Navbar() {
                     {/* nav links Toggler */}
                     <NavLinks />
                     {/* Theme Toggler */}
-                    <span
+                    <button
                         className="cursor-pointer sm:ml-5"
                         title={darkTheme ? "Light mode" : "Dark mode"}
                         onClick={toggleTheme}
@@ -107,13 +99,16 @@ export default function Navbar() {
                                 <path d="M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36c-0.98,1.37-2.58,2.26-4.4,2.26 c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z" />
                             </svg>
                         )}
-                    </span>
+                    </button>
                     {/* Drawer Toggler */}
-                    <span
+                    <button
                         className="cursor-pointer inline-flex ml-3 sm:hidden"
-                        onClick={toggleNavDrawer}
+                        onClick={() => {
+                            toggleDrawer((prev) => !prev)
+                        }}
+                        data-drawer
                     >
-                        {drawerIsOpen ? (
+                        {drawer ? (
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"
@@ -139,7 +134,7 @@ export default function Navbar() {
                                 />
                             </svg>
                         )}
-                    </span>
+                    </button>
                 </div>
             </div>
         </nav>

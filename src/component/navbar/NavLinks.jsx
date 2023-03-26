@@ -4,7 +4,7 @@ import { ContactForm } from "../utils"
 import { useRef } from "react"
 
 export default function NavLinks() {
-    const { modal, toggleModal } = useContext(GlobalContext)
+    const { modal, toggleModal, setProjectDetail } = useContext(GlobalContext)
     const navLinkRef = useRef(null)
 
     function navigate(ev = new Event()) {
@@ -14,6 +14,8 @@ export default function NavLinks() {
             `section[data-snap]#${linkID}`,
         )
 
+        setProjectDetail(null)
+
         targetElement.scrollIntoView({
             behavior: "smooth",
         })
@@ -21,6 +23,7 @@ export default function NavLinks() {
         navLinkRef.current
             .querySelector("li.active")
             ?.classList.remove("active")
+
         ev.target.closest("li").classList.add("active")
     }
 

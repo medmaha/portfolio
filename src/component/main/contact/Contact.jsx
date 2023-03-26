@@ -1,12 +1,40 @@
 import SectionHeading from "../../utils/SectionHeading"
+// import { sendMeMail } from "./emailMe"
 import "./style.css"
 
 export default function Contact() {
-    function handleFormSubmit() {}
+    async function handleFormSubmit(ev) {
+        ev.preventDefault()
+        const form = new FormData(ev.currentTarget)
+        const data = {}
+
+        const entries = form.entries()
+
+        for (const [key, value] of entries) {
+            if (key === "email") {
+                data["from"] = value
+                continue
+            }
+            if (key === "message") {
+                data["text"] = value
+                continue
+            }
+            data[key] = value
+        }
+
+        // todo validate form
+
+        try {
+            // const resp = await sendMeMail(data)
+            // console.log(resp)
+        } catch (error) {
+            console.log(error)
+        }
+    }
     return (
         <section
             data-snap
-            className="flex flex-col items-center mb-[55px] sm:px-3 "
+            className="flex flex-col items-center mb-[55px] sm:px-3 mx-1"
             id="contactMe"
         >
             <div className="mt-[70px]"></div>
@@ -16,16 +44,16 @@ export default function Contact() {
             {/* <h3 className="text-center pt-[25px] text-3xl mb-[25px] p-3 tracking-wide font-bold">
                 CTA
             </h3> */}
-            <div className="flex max-w-[700px] flex-col items-center card-bold rounded-xl md:rounded-full pb-[25px] bg-gray-100 dark:bg-slate-800">
+            <div className="flex max-w-[400px] sm:max-w-[700px] w-full flex-col items-center card-bold rounded-xl sm:rounded-full pb-4 sm:pb-[25px] bg-gray-100 dark:bg-slate-800">
                 <h2 className="text-center text-xl sm:text-2xl pt-[25px] pb-[5px] tracking-wide font-semibold">
-                    CTA
+                    #CTA
                 </h2>
                 <form
                     action=""
                     onSubmit={handleFormSubmit}
-                    className="flex flex-col sm:flex-row gap-3 p-3 w-auto"
+                    className="flex flex-col sm:flex-row gap-3 p-3 pb-0 w-full"
                 >
-                    <div className="flex flex-col gap-1 ">
+                    <div className="flex flex-col sm:gap-1 gap-2 w-full">
                         <div className="flex flex-col gap-1">
                             <label htmlFor="name">Name</label>
                             <input
@@ -33,7 +61,7 @@ export default function Contact() {
                                 id="name"
                                 name="name"
                                 placeholder="your name"
-                                className=" sm:w-[95%] outline-gray-400 outline-[2px] focus:outline-sky-500 outline py-1 px-2 w-full"
+                                className="outline-gray-400 outline-[2px] focus:outline-sky-500 outline py-2 px-2 w-full min-w-[200px] sm:min-w-[300px]"
                             />
                         </div>
                         <div className="flex flex-col gap-1">
@@ -43,7 +71,7 @@ export default function Contact() {
                                 id="email"
                                 name="email"
                                 placeholder="email address"
-                                className=" sm:w-[95%] outline-gray-400 outline-[2px] focus:outline-sky-500 outline py-1 px-2 w-full"
+                                className="outline-gray-400 outline-[2px] focus:outline-sky-500 outline py-2 px-2 w-full min-w-[200px] sm:min-w-[300px]"
                             />
                         </div>
                         <div className="flex flex-col gap-1">
@@ -53,7 +81,7 @@ export default function Contact() {
                                 id="subject"
                                 placeholder="subject"
                                 name="subject"
-                                className=" sm:w-[95%] outline-gray-400 outline-[2px] focus:outline-sky-500 outline py-1 px-2 w-full"
+                                className="outline-gray-400 outline-[2px] focus:outline-sky-500 outline py-2 px-2 w-full min-w-[200px] sm:min-w-[300px]"
                             />
                         </div>
                     </div>
@@ -63,13 +91,15 @@ export default function Contact() {
                             id="message"
                             name="message"
                             placeholder="message"
-                            className=" resize-none outline-gray-400 outline-[2px] focus:outline-sky-500 outline h-full w-full py-1 px-2 md:min-w-[350px] max-h-[240px] overflow-y-auto"
+                            className="resize-none outline-gray-400 outline-[2px] focus:outline-sky-500 outline h-full w-full py-2 px-2 min-w-[200px] sm:min-w-[300px] overflow-y-auto"
                         ></textarea>
                     </div>
+                    <div className="flex pt-4 flex-col gap-1 w-full">
+                        <button className="flex-1 mt-2 py-2 text-lg rounded dark:bg-primary-dark text-card-light dark:text-card-dark">
+                            Submit
+                        </button>
+                    </div>
                 </form>
-                <button className="px-3 py-1 text-lg rounded k dark:bg-primary-dark text-card-light dark:text-card-dark">
-                    Submit
-                </button>
             </div>
 
             <EmailAndPhone />
