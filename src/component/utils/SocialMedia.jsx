@@ -10,7 +10,7 @@ export default function SocialMedia() {
 
     return (
         <>
-            <div className="fixed z-10 primary-bg top-[65px] left-[0] w-full max-w-[35px] md:max-w-[50px] h-[calc(100vh-65px)]">
+            <div className="fixed z-10 primary-bg top-[65px] left-[0] w-full max-w-[35px] md:max-w-[50px] h-[calc(100vh-80px)]">
                 <ul className="h-full flex justify-between gap-10 flex-col ">
                     <li className="flex justify-center">
                         <a
