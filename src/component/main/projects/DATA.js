@@ -1,114 +1,60 @@
 const projects = [
-    // {
-    //     name: "Celesup",
-    //     description: (
-    //         <>
-    //             <p>
-    //                 Celesup is a social media platform that allows{" "}
-    //                 <b>supporters</b> to connect with their favorite{" "}
-    //                 <b>celebrities</b>, while also providing a range of features
-    //                 that promote engagement and interactivity. The platform was
-    //                 designed to create a space where fans and celebrities can
-    //                 interact, share content, and engage in meaningful
-    //                 conversations.
-    //             </p>
-
-    //             <p>
-    //                 Built using the powerful combination of <b>Django</b> and{" "}
-    //                 <b>NextJs</b>, Celesup is a full-stack web application that
-    //                 offers robust functionality for both supporters and
-    //                 celebrities. Celesup is a scalable and performant
-    //                 application that prioritizes security and user experience.
-    //             </p>
-
-    //             <p>
-    //                 The platform employs a range of security measures, including
-    //                 secure authentication methods such as <b>JWT tokens</b>.
-    //                 Additionally, the platform uses a task queue like{" "}
-    //                 <b>Celery</b> to handle long-running or background tasks,
-    //                 such as sending emails or processing uploaded images, which
-    //                 helps improve the scalability and performance of the
-    //                 application.
-    //             </p>
-
-    //             <p>
-    //                 Another key feature of Celesup is its intuitive and engaging
-    //                 user interface styled with <b>Tailwind Css</b>. The platform
-    //                 is designed to be easy to use, with a clean and modern
-    //                 design that makes it simple for users to navigate and find
-    //                 the content they're looking for.
-    //             </p>
-    //         </>
-    //     ),
-    //     intro: (
-    //         <>
-    //             Celesup is a social media platform that allows <b>supporters</b>{" "}
-    //             to connect with their favorite <b>celebrities</b>, while also
-    //             providing a range of features that promote engagement and
-    //             interactivity. The platform was designed to create a space where
-    //             fans and celebrities can interact, share content, and engage in
-    //             meaningful conversations.
-    //         </>
-    //     ),
-    //     githubLink: "https://github.com/medmaha/celesup-c",
-    //     downloadLink: "",
-    //     liveDemoLink: "https://celesup.vercel.app",
-    //     technologies: [""],
-    //     thumbnail: "celesup.png",
-    // },
     {
-        name: "ChatVite",
+        name: "Celesup",
         description: (
             <>
                 <p>
-                    ChatVite is a powerful web application that enables users to
-                    collaborate and chat together in an AI-powered chatroom. The
-                    platform is intuitive and engaging, with a range of features
-                    that promote interactivity and collaboration.
+                    Celesup is a social media platform that allows{" "}
+                    <b>supporters</b> to connect with their favorite{" "}
+                    <b>celebrities</b>, while also providing a range of features
+                    that promote engagement and interactivity. The platform was
+                    designed to create a space where fans and celebrities can
+                    interact, share content, and engage in meaningful
+                    conversations.
                 </p>
 
                 <p>
-                    Built using <b>Next.js</b>, <b>MongoDb</b>, <b>SocketIo</b>{" "}
-                    and other powerful technologies, ChatVite is a full-stack
-                    web application that provides a rich set of features for
-                    both <b>public</b> and <b>private</b> chatrooms. The
-                    platform includes features such as real-time chat, group and
-                    private chatroom creation, and AI-powered chatbots to keep
-                    conversations engaging and interactive.
+                    Built using the powerful combination of <b>Django</b> and{" "}
+                    <b>NextJs</b>, Celesup is a full-stack web application that
+                    offers robust functionality for both supporters and
+                    celebrities. Celesup is a scalable and performant
+                    application that prioritizes security and user experience.
                 </p>
+
                 <p>
-                    One of the primary goals of ChatVite is to provide a secure
-                    and private environment for users to collaborate and chat
-                    with one another. To that end, private chatrooms are only
-                    accessible to the host of the chatroom, ensuring that
-                    conversations are kept confidential and secure. Public
-                    chatrooms, on the other hand, are available to anyone who
-                    wishes to join and participate.
+                    The platform employs a range of security measures, including
+                    secure authentication methods such as <b>JWT tokens</b>.
+                    Additionally, the platform uses a task queue like{" "}
+                    <b>Celery</b> to handle long-running or background tasks,
+                    such as sending emails or processing uploaded images, which
+                    helps improve the scalability and performance of the
+                    application.
                 </p>
+
                 <p>
-                    To ensure the highest level of security and privacy for its
-                    users, ChatVite employs a range of security measures,
-                    including secure authentication methods such as JWT tokens
-                    and OAuth with the <b>NextAuth</b> library. Additionally,
-                    the platform uses Firebase Storage to securely store user
-                    media files, ensuring that user data is always safe and
-                    secure.
+                    Another key feature of Celesup is its intuitive and engaging
+                    user interface styled with <b>Tailwind Css</b>. The platform
+                    is designed to be easy to use, with a clean and modern
+                    design that makes it simple for users to navigate and find
+                    the content they're looking for.
                 </p>
             </>
         ),
         intro: (
             <>
-                ChatVite is a powerful web application that enables users to
-                collaborate and chat together in an AI-powered chatroom. The
-                platform is intuitive and engaging, with a range of features
-                that promote interactivity and collaboration.
+                Celesup is a social media platform that allows <b>supporters</b>{" "}
+                to connect with their favorite <b>celebrities</b>, while also
+                providing a range of features that promote engagement and
+                interactivity. The platform was designed to create a space where
+                fans and celebrities can interact, share content, and engage in
+                meaningful conversations.
             </>
         ),
-        githubLink: "https://github.com/medmaha/chatvite.git",
+        githubLink: "https://github.com/medmaha/celesup-c",
         downloadLink: "",
-        liveDemoLink: "https://chatvite.vercel.app",
+        liveDemoLink: "https://celesup.vercel.app",
         technologies: [""],
-        thumbnail: "chatvite.png",
+        thumbnail: "celesup.png",
     },
     {
         name: "REST Tester",
@@ -170,6 +116,60 @@ const projects = [
         liveDemoLink: "https://resttester.netlify.app",
         technologies: [""],
         thumbnail: "postman.png",
+    },
+    {
+        name: "ChatVite",
+        description: (
+            <>
+                <p>
+                    ChatVite is a powerful web application that enables users to
+                    collaborate and chat together in an AI-powered chatroom. The
+                    platform is intuitive and engaging, with a range of features
+                    that promote interactivity and collaboration.
+                </p>
+
+                <p>
+                    Built using <b>Next.js</b>, <b>MongoDb</b>, <b>SocketIo</b>{" "}
+                    and other powerful technologies, ChatVite is a full-stack
+                    web application that provides a rich set of features for
+                    both <b>public</b> and <b>private</b> chatrooms. The
+                    platform includes features such as real-time chat, group and
+                    private chatroom creation, and AI-powered chatbots to keep
+                    conversations engaging and interactive.
+                </p>
+                <p>
+                    One of the primary goals of ChatVite is to provide a secure
+                    and private environment for users to collaborate and chat
+                    with one another. To that end, private chatrooms are only
+                    accessible to the host of the chatroom, ensuring that
+                    conversations are kept confidential and secure. Public
+                    chatrooms, on the other hand, are available to anyone who
+                    wishes to join and participate.
+                </p>
+                <p>
+                    To ensure the highest level of security and privacy for its
+                    users, ChatVite employs a range of security measures,
+                    including secure authentication methods such as JWT tokens
+                    and OAuth with the <b>NextAuth</b> library. Additionally,
+                    the platform uses Firebase Storage to securely store user
+                    media files, ensuring that user data is always safe and
+                    secure.
+                </p>
+            </>
+        ),
+        intro: (
+            <>
+                ChatVite is a powerful web application that enables users to
+                collaborate and chat together in an AI-powered chatroom. The
+                platform is intuitive and engaging, with a range of features
+                that promote interactivity and collaboration.
+            </>
+        ),
+        githubLink: "https://github.com/medmaha/chatvite.git",
+        downloadLink: "",
+        liveDemoLink: "https://chatvite.vercel.app",
+        technologies: [""],
+        thumbnail: "chatvite.png",
     },
 
     {
