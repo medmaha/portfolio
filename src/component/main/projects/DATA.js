@@ -50,7 +50,7 @@ const projects = [
                 meaningful conversations.
             </>
         ),
-        githubLink: "https://github.com/medmaha/celesup-c",
+        githubLink: "https://github.com/medmaha/celesup",
         downloadLink: "",
         liveDemoLink: "https://celesup.vercel.app",
         technologies: [""],
