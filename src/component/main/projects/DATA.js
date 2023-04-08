@@ -266,73 +266,73 @@ const projects = [
         thumbnail: "movieland.png",
     },
 
-    // {
-    //     name: "Tech Electrical",
-    //     description: (
-    //         <>
-    //             {/* paragraph 1 */}
-    //             <p>
-    //                 TETI (Tech Electrical Training Institute) is a comprehensive
-    //                 website that provides technical training courses, sales of
-    //                 solar and electrical accessories, and services such as
-    //                 electrical and satellite installations. The website is built
-    //                 using <b>SvelteKit</b>, a powerful web framework that allows
-    //                 for seamless server-side rendering and efficient client-side
-    //                 updates.
-    //             </p>
-    //             {/* paragraph 2 */}
-    //             <p>
-    //                 With <b>SvelteKit</b>, TETI's website is fast, responsive,
-    //                 and easy to use. Users can easily navigate the website to
-    //                 find information about TETI's various courses and services,
-    //                 including detailed descriptions, prices, and schedules. The
-    //                 website also provides users with the ability to register and
-    //                 enroll in courses, purchase products, and schedule service
-    //                 appointments.
-    //             </p>
-    //             {/* paragraph 3 */}
-    //             <p>
-    //                 The website's integration with <b>MongoDB</b> allows for
-    //                 efficient data management, such as user account creation,
-    //                 course enrollment, and purchase history. The website also
-    //                 uses <b>Tailwind CSS</b> to create a modern and responsive
-    //                 design, allowing for seamless use on any device.
-    //             </p>
-    //             {/* paragraph 4 */}
-    //             <p>
-    //                 TETI's website is designed with a modern, clean, and
-    //                 professional look, with intuitive navigation and
-    //                 user-friendly interfaces. It features a variety of
-    //                 interactive elements, such as forms, dropdown menus, and
-    //                 dynamic content, to enhance the user experience.
-    //             </p>
-    //             {/* paragraph 4 */}
-    //             <p>
-    //                 Overall, TETI's website is a powerful tool for both TETI and
-    //                 its customers, providing a seamless and efficient online
-    //                 experience for technical training, product purchases, and
-    //                 services.`,
-    //             </p>
-    //         </>
-    //     ),
-    //     intro: (
-    //         <>
-    //             `TETI (Tech Electrical Training Institute) is a comprehensive
-    //             website that provides technical training courses, sales of solar
-    //             and electrical accessories, and services such as electrical and
-    //             satellite installations. The website is built using SvelteKit, a
-    //             powerful web framework that allows for seamless server-side
-    //             rendering and efficient client-side updates. MongoDB is used as
-    //             the database to store and manage data. Tailwind CSS is used to
-    //             style the website and create a responsive and modern design.
-    //         </>
-    //     ),
-    //     githubLink: "",
-    //     downloadLink: "",
-    //     liveDemoLink: "https://tec-electrical.netlify.app",
-    //     technologies: [""],
-    //     thumbnail: "tec-electrical.png",
-    // },
+    {
+        name: "Tech Electrical",
+        description: (
+            <>
+                {/* paragraph 1 */}
+                <p>
+                    TETI (Tech Electrical Training Institute) is a comprehensive
+                    website that provides technical training courses, sales of
+                    solar and electrical accessories, and services such as
+                    electrical and satellite installations. The website is built
+                    using <b>SvelteKit</b>, a powerful web framework that allows
+                    for seamless server-side rendering and efficient client-side
+                    updates.
+                </p>
+                {/* paragraph 2 */}
+                <p>
+                    With <b>SvelteKit</b>, TETI's website is fast, responsive,
+                    and easy to use. Users can easily navigate the website to
+                    find information about TETI's various courses and services,
+                    including detailed descriptions, prices, and schedules. The
+                    website also provides users with the ability to register and
+                    enroll in courses, purchase products, and schedule service
+                    appointments.
+                </p>
+                {/* paragraph 3 */}
+                <p>
+                    The website's integration with <b>MongoDB</b> allows for
+                    efficient data management, such as user account creation,
+                    course enrollment, and purchase history. The website also
+                    uses <b>Tailwind CSS</b> to create a modern and responsive
+                    design, allowing for seamless use on any device.
+                </p>
+                {/* paragraph 4 */}
+                <p>
+                    TETI's website is designed with a modern, clean, and
+                    professional look, with intuitive navigation and
+                    user-friendly interfaces. It features a variety of
+                    interactive elements, such as forms, dropdown menus, and
+                    dynamic content, to enhance the user experience.
+                </p>
+                {/* paragraph 4 */}
+                <p>
+                    Overall, TETI's website is a powerful tool for both TETI and
+                    its customers, providing a seamless and efficient online
+                    experience for technical training, product purchases, and
+                    services.`,
+                </p>
+            </>
+        ),
+        intro: (
+            <>
+                `TETI (Tech Electrical Training Institute) is a comprehensive
+                website that provides technical training courses, sales of solar
+                and electrical accessories, and services such as electrical and
+                satellite installations. The website is built using SvelteKit, a
+                powerful web framework that allows for seamless server-side
+                rendering and efficient client-side updates. MongoDB is used as
+                the database to store and manage data. Tailwind CSS is used to
+                style the website and create a responsive and modern design.
+            </>
+        ),
+        githubLink: "https://github.com/medmaha/tech-electric",
+        downloadLink: "",
+        liveDemoLink: "https://tech-electric.vercel.app",
+        technologies: [""],
+        thumbnail: "tec-electrical.png",
+    },
 ]
 
 export default projects
