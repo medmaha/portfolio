@@ -6,6 +6,7 @@
 .animate_left {
     transform: translateX(-100vw);
 }
+
 .animate_right {
     transform: translateX(100%);
 }

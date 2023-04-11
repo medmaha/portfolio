@@ -5,7 +5,7 @@ import Quotes from "./Quote"
 export default function Hero() {
     const context = useContext(GlobalContext)
     return (
-        <div className="flex justify-center items-center flex-col mt-[5px]">
+        <div className="flex items-center flex-col h-full mt-[20px]">
             <h1
                 className={`sm:text-3xl text-2xl md:text-3xl text-center tracking-wide font-semibold capitalize`}
             >

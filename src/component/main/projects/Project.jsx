@@ -18,7 +18,7 @@ export default function Project({ data }) {
                 >
                     {data.name}
                 </span>
-                <div className="flex-1 w-full pb-4">
+                <div className="flex-1 w-full pb-4 relative">
                     <ImageLazyLoader
                         src={`/assets/img/${data.thumbnail}`}
                         // onClick={() => {
@@ -32,7 +32,7 @@ export default function Project({ data }) {
                         onClick={viewProjectDetails}
                         alt={"project " + data.name}
                         width="100%"
-                        className="cursor-pointer bg-slate-800 outline-gray-500 outline outline-1 h-[150px] object-fill sm:min-h-[170px]  md:max-h-[200px]"
+                        className="cursor-pointer bg-slate-800 outline-gray-500 outline outline-2 h-[150px] object-fill sm:min-h-[170px]  md:max-h-[200px]"
                     />
                 </div>
 
@@ -69,6 +69,7 @@ export default function Project({ data }) {
 
 const ImageLazyLoader = ({ src, ...restProps }) => {
     const [imageSrc, setImageSrc] = useState(null)
+    const [hovering, toggleHovering] = useState(false)
     const imageRef = useRef(null)
 
     useEffect(() => {
@@ -88,8 +89,24 @@ const ImageLazyLoader = ({ src, ...restProps }) => {
     }, [src])
 
     return (
-        <>
-            <img ref={imageRef} src={src} {...{ alt: "", ...restProps }} />
-        </>
+        <span onMouseLeave={() => toggleHovering(false)}>
+            <img
+                onMouseOver={() => toggleHovering(true)}
+                ref={imageRef}
+                src={src}
+                {...{ alt: "", ...restProps }}
+            />
+
+            {hovering && (
+                <div
+                    onClick={restProps.onClick}
+                    className="absolute top-0 left-0 w-full rounded-[5px] bg-black bg-opacity-70 sm:min-h-[170px]"
+                >
+                    <span className="inline-flex justify-center items-center w-full sm:min-h-[170px] font-bold text-lg tracking-wide cursor-pointer">
+                        More details?
+                    </span>
+                </div>
+            )}
+        </span>
     )
 }

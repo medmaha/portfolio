@@ -70,7 +70,7 @@ export default function Quotes() {
             <div className="flex justify-center py-2">
                 <span
                     ref={quoteTextRef}
-                    className="border-b-2 px-2"
+                    className="border-b-2 px-2 opacity-80"
                     data-intro-quote
                 >
                     {quote.text}

@@ -4,6 +4,19 @@
     border-color: transparent;
 } */
 
+
+.quote {
+    color: rgb(27, 27, 238);
+}
+
+.quote svg {
+    fill-opacity: .85;
+}
+
+.dark .quote {
+    color: rgba(0, 255, 255, 0.793);
+}
+
 .__nav__link .active {
     border-bottom: 2px solid rgb(27, 27, 238);
 }

@@ -173,7 +173,7 @@ const projects = [
     },
 
     {
-        name: "Pathfinding Visualizer",
+        name: "Path Finder",
         description: (
             <>
                 <p>
@@ -209,6 +209,11 @@ const projects = [
             <>
                 Pathfinding Visualizer is a web application that provides an
                 intuitive interface for visualizing different search algorithms.
+                The user interface of Pathfinding Visualizer is designed to be
+                clear and easy-to-understand visualizations that make it easy to
+                see how the different search algorithms work. One of the key
+                features of Pathfinding Visualizer is its ability to visualize
+                different search algorithms
             </>
         ),
         githubLink: "",
@@ -317,7 +322,7 @@ const projects = [
         ),
         intro: (
             <>
-                `TETI (Tech Electrical Training Institute) is a comprehensive
+                TETI (Tech Electrical Training Institute) is a comprehensive
                 website that provides technical training courses, sales of solar
                 and electrical accessories, and services such as electrical and
                 satellite installations. The website is built using SvelteKit, a
