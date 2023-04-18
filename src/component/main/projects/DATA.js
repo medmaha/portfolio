@@ -1,10 +1,10 @@
 const projects = [
     {
-        name: "Celesup",
+        name: "Celehub",
         description: (
             <>
                 <p>
-                    Celesup is a social media platform that allows{" "}
+                    Celehub is a social media platform that allows{" "}
                     <b>supporters</b> to connect with their favorite{" "}
                     <b>celebrities</b>, while also providing a range of features
                     that promote engagement and interactivity. The platform was
@@ -15,9 +15,9 @@ const projects = [
 
                 <p>
                     Built using the powerful combination of <b>Django</b> and{" "}
-                    <b>NextJs</b>, Celesup is a full-stack web application that
+                    <b>NextJs</b>, Celehub is a full-stack web application that
                     offers robust functionality for both supporters and
-                    celebrities. Celesup is a scalable and performant
+                    celebrities. Celehub is a scalable and performant
                     application that prioritizes security and user experience.
                 </p>
 
@@ -32,17 +32,22 @@ const projects = [
                 </p>
 
                 <p>
-                    Another key feature of Celesup is its intuitive and engaging
+                    Another key feature of Celehub is its intuitive and engaging
                     user interface styled with <b>Tailwind Css</b>. The platform
                     is designed to be easy to use, with a clean and modern
                     design that makes it simple for users to navigate and find
                     the content they're looking for.
                 </p>
+                <p>
+                    App name changed from "<b className="opacity-80">Celesup</b>
+                    {'" to '}"<b className="primary-text opacity-80">Celehub</b>
+                    "
+                </p>
             </>
         ),
         intro: (
             <>
-                Celesup is a social media platform that allows <b>supporters</b>{" "}
+                Celehub is a social media platform that allows <b>supporters</b>{" "}
                 to connect with their favorite <b>celebrities</b>, while also
                 providing a range of features that promote engagement and
                 interactivity. The platform was designed to create a space where
@@ -50,11 +55,11 @@ const projects = [
                 meaningful conversations.
             </>
         ),
-        githubLink: "https://github.com/medmaha/celesup",
+        githubLink: "https://github.com/medmaha/celesub",
         downloadLink: "",
-        liveDemoLink: "https://celesup.vercel.app",
+        liveDemoLink: "https://celesub.vercel.app",
         technologies: [""],
-        thumbnail: "celesup.png",
+        thumbnail: "celehub.png",
     },
     {
         name: "REST Tester",
