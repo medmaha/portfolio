@@ -11,8 +11,9 @@ export default function Contact() {
     async function handleFormSubmit(ev) {
         ev.preventDefault()
         setLoading(true)
-        if (!ev.currentTarget.checkValidity()) {
-            ev.currentTarget.reportValidity()
+        const _form = ev.currentTarget
+        if (!_form.checkValidity()) {
+            _form.reportValidity()
             return
         }
 
@@ -31,7 +32,7 @@ export default function Contact() {
                 alert(
                     `Thank you ${name} for sending me a message i'll get back to you as soon as possible`,
                 )
-                ev.currentTarget.reset()
+                _form?.reset()
                 return
             }
             alert(message)
