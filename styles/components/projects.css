@@ -24,7 +24,7 @@
     overflow: hidden;
     max-height: 5rem;
     -webkit-line-clamp: 4;
-    display: box;
+    display: -webkit-box;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;

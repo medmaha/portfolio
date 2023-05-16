@@ -1,0 +1,38 @@
+@import url('index.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+input{
+    z-index: auto;
+}
+
+
+.loader-ping {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    border-radius: 9999px;
+    animation-name: loader-ping;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    margin: 0 2px;
+    @apply bg-primary-light
+}
+
+.loader-ping:nth-child(2) {
+    animation-delay: 350ms;
+}
+.loader-ping:nth-child(3) {
+    animation-delay: 700ms;
+}
+@keyframes loader-ping {
+    50% {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+}

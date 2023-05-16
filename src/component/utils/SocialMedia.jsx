@@ -1,4 +1,3 @@
-import "./socialMedia.css"
 import { useContext } from "react"
 import { GlobalContext } from "../../Portfolio"
 import WhatsappContact from "./WhatsappContact"
@@ -10,15 +9,14 @@ export default function SocialMedia() {
 
     return (
         <>
-            <div className="fixed z-10 primary-bg top-[65px] left-[0] w-full my-auto max-w-[35px] md:max-w-[50px] h-[calc(100vh-65px)]">
+            <div className="fixed z-10 top-[65px] left-[0] w-full my-auto max-w-[35px] md:max-w-[50px] h-[calc(100vh-100px)]">
                 <ul className="h-full flex justify-evenly gap-5 flex-col ">
                     <li className="flex justify-center">
                         <a
                             className=""
                             href="https://github.com/medmaha"
                             data-github
-                            target="_blank"
-                            rel="noreferrer"
+                            target="blank"
                             title="Github"
                         >
                             <svg
@@ -39,8 +37,7 @@ export default function SocialMedia() {
                         <a
                             className=""
                             href="https://www.linkedin.com/in/medmaha/"
-                            target="_blank"
-                            rel="noreferrer"
+                            target="blank"
                             data-linkedin
                             title="Linkedin"
                         >
@@ -72,8 +69,7 @@ export default function SocialMedia() {
                             href="https://twitter.com/MahamedToure4"
                             data-twitter
                             title="Twitter"
-                            rel="noreferrer"
-                            target="_blank"
+                            target="blank"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -102,9 +98,8 @@ export default function SocialMedia() {
                             className=""
                             href="https://www.instagram.com/mahamedtoure4/"
                             data-instagram
-                            rel="noreferrer"
                             title="Instagram"
-                            target="_blank"
+                            target="blank"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -218,8 +213,7 @@ export default function SocialMedia() {
                             href="https://www.facebook.com/mahamedtoure4/"
                             data-facebook
                             title="Facebook"
-                            target="_blank"
-                            rel="noreferrer"
+                            target="blank"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -278,8 +272,7 @@ export default function SocialMedia() {
                     <li className="  flex justify-center">
                         <a
                             className=""
-                            target="_blank"
-                            rel="noreferrer"
+                            target="blank"
                             href={`mailto:${myEmail}`}
                             data-email
                             title="Whatsapp"

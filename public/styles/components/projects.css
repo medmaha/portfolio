@@ -1,0 +1,52 @@
+.__project__card .__project {
+    border-radius: 5px;
+    z-index: 0;
+}
+
+.__project__card {
+    opacity: 0;
+    transform: translateY(50%);
+    transition: 200ms ease;
+}
+
+.__project__card img {
+    border-radius: 5px;
+    transition: 250ms linear;
+}
+
+.__project__card img:hover {
+    transform: scale(1.1);
+    outline-width: 2px;
+}
+
+.__project__card .intro {
+    display: block;
+    overflow: hidden;
+    max-height: 5rem;
+    -webkit-line-clamp: 4;
+    display: -webkit-box;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+.__animate__in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes animateObserver {
+    0% {
+        opacity: 0;
+        transform: translateY(50%);
+    }
+
+    5% {
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

@@ -10,7 +10,7 @@ You can find some of my projects on my [GitHub profile](https://github.com/medma
 
 -   [Celesup](https://github.com/medmaha/celesup)
 -   [ChatVite](https://github.com/medmaha/chatvite)
--   [Tech Electric](https://github.com/yourusername/tech-electrical)
+-   [Tech Electric](https://github.com/medmaha/tech-electrical)
 
 ## Portfolio
 

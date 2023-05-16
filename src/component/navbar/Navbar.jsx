@@ -1,7 +1,7 @@
-import "./styles.css"
 import { useContext, useState, useEffect, useRef } from "react"
 import { GlobalContext } from "../../Portfolio"
 import NavLinks from "./NavLinks"
+import Link from "next/link"
 
 export default function Navbar() {
     const { drawer, toggleDrawer, setDarkTheme, darkTheme } =
@@ -11,22 +11,32 @@ export default function Navbar() {
         // console.log(context)
     }, [])
 
-    const [drawerIsOpen, setOpenDrawer] = useState(false)
-
     function toggleTheme() {
-        if (localStorage.getItem("theme") === "dark") {
-            localStorage.setItem("theme", "light")
-        } else {
-            localStorage.setItem("theme", "dark")
-        }
+        document.querySelector("[data-theme]").classList.toggle("dark")
         setDarkTheme((prev) => !prev)
+        setThemeToCookies()
+    }
+
+    async function setThemeToCookies() {
+        try {
+            const res = await fetch("/api/theme", {
+                credentials: "include",
+            })
+            const data = await res.json()
+            document
+                .querySelector("[data-theme]")
+                .classList.add(data["current-theme"])
+        } catch (error) {
+            document.querySelector("[data-theme]").classList.toggle("dark")
+            console.error(error.message)
+        }
     }
 
     return (
         <nav className="h-[65px] fixed top-0 left-0 flex justify-center w-full z-30">
             <div className="relative flex h-full items-center justify-between w-full px-[10px]">
                 <div className="">
-                    <a
+                    <Link
                         href="/"
                         className="text-xl tracking-wide flex items-stretch h-full dark:fill-slate-200 fill-slate-800"
                     >
@@ -58,48 +68,51 @@ export default function Navbar() {
                         <span className="pl-[2px] inline-flex items-end h-[40px] font-bold">
                             aha
                         </span>
-                    </a>
+                    </Link>
                 </div>
                 <div className="flex h-full items-center">
                     {/* nav links Toggler */}
                     <NavLinks />
                     {/* Theme Toggler */}
-                    <button
-                        className="cursor-pointer sm:ml-5"
-                        title={darkTheme ? "Light mode" : "Dark mode"}
-                        onClick={toggleTheme}
-                    >
-                        {darkTheme ? (
-                            // <img
-                            //     src="/assets/svg/dark-mode.svg"
-                            //     alt="dark theme toggler"
-                            // />
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 2048 2048"
-                                width="24px"
-                                height="24px"
-                                className="dark:fill-slate-200 fill-slate-800 transition"
-                            >
-                                <path d="M960 512q93 0 174.5 35.5t142 96 96 142T1408 960t-35.5 174.5-96 142-142 96T960 1408t-174.5-35.5-142-96-96-142T512 960t35.5-174.5 96-142 142-96T960 512zm0 768q66 0 124-25.5t101.5-69 69-101.5 25.5-124-25.5-124-69-101.5-101.5-69T960 640q-35 0-64 7v626q29 7 64 7zm64-896H896V0h128v384zM896 1536h128v384H896v-384zm1024-640v128h-384V896h384zM384 1024H0V896h384v128zm123-426L236 326l90-90 272 271zm906 724l271 272-90 90-272-271zm0-724l-91-91 272-271 90 90zm-906 724l91 91-272 271-90-90z" />
-                            </svg>
-                        ) : (
-                            // <img
-                            //     src="/assets/svg/light-mode.svg"
-                            //     alt="light theme toggler"
-                            // />
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                height="24px"
-                                width="24px"
-                                viewBox="0 0 24 24"
-                                className="dark:fill-slate-200 fill-slate-800 transition"
-                            >
-                                <rect fill="none" height="24" width="24" />
-                                <path d="M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36c-0.98,1.37-2.58,2.26-4.4,2.26 c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z" />
-                            </svg>
-                        )}
-                    </button>
+
+                    {darkTheme !== null && (
+                        <button
+                            className="cursor-pointer sm:ml-5"
+                            title={darkTheme ? "Light mode" : "Dark mode"}
+                            onClick={toggleTheme}
+                        >
+                            {darkTheme ? (
+                                // <img
+                                //     src="/assets/svg/dark-mode.svg"
+                                //     alt="dark theme toggler"
+                                // />
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 2048 2048"
+                                    width="24px"
+                                    height="24px"
+                                    className="dark:fill-slate-200 fill-slate-800 transition"
+                                >
+                                    <path d="M960 512q93 0 174.5 35.5t142 96 96 142T1408 960t-35.5 174.5-96 142-142 96T960 1408t-174.5-35.5-142-96-96-142T512 960t35.5-174.5 96-142 142-96T960 512zm0 768q66 0 124-25.5t101.5-69 69-101.5 25.5-124-25.5-124-69-101.5-101.5-69T960 640q-35 0-64 7v626q29 7 64 7zm64-896H896V0h128v384zM896 1536h128v384H896v-384zm1024-640v128h-384V896h384zM384 1024H0V896h384v128zm123-426L236 326l90-90 272 271zm906 724l271 272-90 90-272-271zm0-724l-91-91 272-271 90 90zm-906 724l91 91-272 271-90-90z" />
+                                </svg>
+                            ) : (
+                                // <img
+                                //     src="/assets/svg/light-mode.svg"
+                                //     alt="light theme toggler"
+                                // />
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    height="24px"
+                                    width="24px"
+                                    viewBox="0 0 24 24"
+                                    className="dark:fill-slate-200 fill-slate-800 transition"
+                                >
+                                    <rect fill="none" height="24" width="24" />
+                                    <path d="M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36c-0.98,1.37-2.58,2.26-4.4,2.26 c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z" />
+                                </svg>
+                            )}
+                        </button>
+                    )}
                     {/* Drawer Toggler */}
                     <button
                         className="cursor-pointer inline-flex ml-3 sm:hidden"

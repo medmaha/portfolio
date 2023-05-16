@@ -1,4 +1,3 @@
-import "./modalStyles.css"
 import React, { useEffect, useState } from "react"
 
 export default function Modal({ children, instanceDispatcher }) {

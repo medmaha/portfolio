@@ -2,7 +2,7 @@ import React from "react"
 
 export default function Footer() {
     return (
-        <div className="flex pl-[35px] md:pl-[50px] justify-center mt-[10px] w-full">
+        <div className="flex justify-center mt-[10px] w-full shadow bg-card-light dark:bg-card-dark">
             <div className="h-max flex items-center p-3 justify-evenly w-full gap-3 max-w-[650px] flex-wrap mx-2">
                 <span
                     className="text-center text-sm

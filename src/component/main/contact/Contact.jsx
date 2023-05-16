@@ -1,36 +1,50 @@
+import { useState } from "react"
 import SectionHeading from "../../utils/SectionHeading"
 // import { sendMeMail } from "./emailMe"
-import "./style.css"
+import axios from "axios"
 
 export default function Contact() {
+    //
+    const [loading, setLoading] = useState(false)
+    const [invalid, setInvalid] = useState(true)
+
     async function handleFormSubmit(ev) {
         ev.preventDefault()
-        const form = new FormData(ev.currentTarget)
-        const data = {}
-
-        const entries = form.entries()
-
-        for (const [key, value] of entries) {
-            if (key === "email") {
-                data["from"] = value
-                continue
-            }
-            if (key === "message") {
-                data["text"] = value
-                continue
-            }
-            data[key] = value
+        setLoading(true)
+        if (!ev.currentTarget.checkValidity()) {
+            ev.currentTarget.reportValidity()
+            return
         }
 
-        // todo validate form
+        const form = new FormData(ev.currentTarget)
 
         try {
-            // const resp = await sendMeMail(data)
+            axios
             // console.log(resp)
+            const { data } = await axios.post("/api/contact", form, {
+                withCredentials: true,
+                headers: { "content-type": "application/json" },
+            })
+            const { error, name, message } = data
+
+            if (!error) {
+                alert(
+                    `Thank you ${name} for sending me a message i'll get back to you as soon as possible`,
+                )
+                ev.currentTarget.reset()
+                return
+            }
+            alert(message)
         } catch (error) {
-            console.log(error)
+            const msg = error?.response?.data?.message || error.message
+            console.error(error)
+            console.error(msg)
+            alert(msg)
+        } finally {
+            setLoading(false)
         }
     }
+
     return (
         <section
             data-snap
@@ -38,6 +52,7 @@ export default function Contact() {
             id="contactMe"
         >
             <div className="mt-[70px]"></div>
+
             <h3 className="text-center py-[25px] text-2xl tracking-wide font-semibold">
                 <SectionHeading id={"contactMe"} />
             </h3>
@@ -46,14 +61,36 @@ export default function Contact() {
             </h3> */}
             <div
                 data-contact-wrapper
-                className="flex w-full flex-col items-center card-bold pb-4 sm:pb-[25px] bg-gray-100 dark:bg-slate-800"
+                className="flex w-full relative flex-col items-center overflow-hidden card-bold pb-4 sm:pb-[25px] bg-gray-100 dark:bg-slate-800"
             >
+                {loading && (
+                    <div className="absolute z-10 top-0 left-0 w-full h-full block dark:bg-black dark:bg-opacity-30 bg-white bg-opacity-30 backdrop-blur-[3px]">
+                        <div className="flex w-full h-full justify-center items-center flex-col">
+                            <div className="flex justify-center items-center h-max w-full min-w-[100px]">
+                                <div className="loading-ping"></div>
+
+                                <div className="loading-ping"></div>
+
+                                <div className="loading-ping"></div>
+                            </div>
+                            <p className="animate-pulse text-lg text-center pt-2 tracking-wide text-primary-light  font-semibold">
+                                Processing message{" "}
+                                <span className=" font-bold text-xl ">...</span>
+                            </p>
+                        </div>
+                    </div>
+                )}
                 <h2 className="text-center text-xl sm:text-2xl pt-[25px] pb-[5px] tracking-wide font-semibold">
                     #CTA
                 </h2>
+
                 <form
-                    action=""
+                    action="/api/contact"
+                    method="post"
                     onSubmit={handleFormSubmit}
+                    onInput={(ev) => {
+                        setInvalid(!ev.currentTarget.checkValidity())
+                    }}
                     className="gap-3 p-3 w-full"
                 >
                     <div data-contact className="flex gap-3 p-3 w-full">
@@ -63,29 +100,33 @@ export default function Contact() {
                                 <input
                                     type="text"
                                     id="name"
+                                    required
                                     name="name"
                                     placeholder="your name"
-                                    className="outline-gray-400 outline-[2px] focus:outline-sky-500 outline py-2 px-2 w-full min-w-[200px] sm:min-w-[300px]"
+                                    className="outline-gray-400 outline-[2px] focus:outline-sky-500 outline py-2 px-2 w-full min-w-[200px] sm:min-w-[300px] dark:text-card-dark dark:placeholder:opacity-50 placeholder:dark:text-card-dark"
                                 />
                             </div>
                             <div className="flex flex-col gap-1">
                                 <label htmlFor="email">Email</label>
                                 <input
                                     type="text"
+                                    required
                                     id="email"
                                     name="email"
                                     placeholder="email address"
-                                    className="outline-gray-400 outline-[2px] focus:outline-sky-500 outline py-2 px-2 w-full min-w-[200px] sm:min-w-[300px]"
+                                    className="outline-gray-400 outline-[2px] focus:outline-sky-500 outline py-2 px-2 w-full min-w-[200px] sm:min-w-[300px] dark:text-card-dark dark:placeholder:opacity-50 placeholder:dark:text-card-dark"
                                 />
                             </div>
                             <div className="flex flex-col gap-1">
                                 <label htmlFor="">Subject</label>
                                 <input
                                     type="text"
+                                    required
                                     id="subject"
                                     placeholder="subject"
+                                    minLength={10}
                                     name="subject"
-                                    className="outline-gray-400 outline-[2px] focus:outline-sky-500 outline py-2 px-2 w-full min-w-[200px] sm:min-w-[300px]"
+                                    className="outline-gray-400 outline-[2px] focus:outline-sky-500 outline py-2 px-2 w-full min-w-[200px] sm:min-w-[300px] dark:text-card-dark dark:placeholder:opacity-50 placeholder:dark:text-card-dark"
                                 />
                             </div>
                         </div>
@@ -94,13 +135,20 @@ export default function Contact() {
                             <textarea
                                 id="message"
                                 name="message"
+                                required
+                                minLength={25}
+                                maxLength={300}
                                 placeholder="message"
-                                className="resize-none outline-gray-400 outline-[2px] focus:outline-sky-500 outline h-full w-full py-2 px-2 min-w-[200px] sm:min-w-[300px] overflow-y-auto"
+                                className="resize-none outline-gray-400 outline-[2px] focus:outline-sky-500 outline h-full w-full py-2 px-2 min-w-[200px] sm:min-w-[300px] overflow-y-auto dark:text-card-dark dark:placeholder:opacity-50 placeholder:dark:text-card-dark"
                             ></textarea>
                         </div>
                     </div>
                     <div className="mt-4 flex items-end justify-center">
-                        <button className="p-4 w-full max-w-[200px] text-xl rounded dark:bg-primary-dark text-card-light dark:text-card-dark">
+                        <button
+                            disabled={loading || invalid}
+                            type="submit"
+                            className="disabled:opacity-40 disabled:pointer-events-none disabled:cursor-not-allowed p-4 w-full max-w-[200px] text-xl rounded-lg dark:bg-primary-dark text-card-lightbg-primary-light  dark:text-card-dark"
+                        >
                             Submit
                         </button>
                     </div>

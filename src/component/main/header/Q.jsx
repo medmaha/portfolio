@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
-import "./q.css"
 
 let timeoutRef
 
+const QUOTE_TIMING = 5000
 export default function Quote() {
     const quotesList = [
         {
@@ -49,7 +49,7 @@ export default function Quote() {
         }
         timeoutRef = setInterval(() => {
             updateQuote(renderQuote())
-        }, 10000)
+        }, QUOTE_TIMING)
         return () => {
             clearTimeout(timeoutRef)
         }

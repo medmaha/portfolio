@@ -1,13 +1,8 @@
 import React, { useRef, useEffect, useState, useContext } from "react"
-import { GlobalContext } from "../../../Portfolio"
-import { Modal } from "../../utils"
+import Link from "next/link"
 
 export default function Project({ data }) {
-    const { setProjectDetail } = useContext(GlobalContext)
-
-    function viewProjectDetails() {
-        setProjectDetail(data)
-    }
+    "use server"
 
     return (
         <>
@@ -20,6 +15,7 @@ export default function Project({ data }) {
                 </span>
                 <div className="flex-1 w-full pb-4 relative">
                     <ImageLazyLoader
+                        slug={data.slug}
                         src={`/assets/img/${data.thumbnail}`}
                         // onClick={() => {
                         //     if (data.liveDemoLink) {
@@ -29,7 +25,6 @@ export default function Project({ data }) {
                         //         anchorTag.click()
                         //     }
                         // }}
-                        onClick={viewProjectDetails}
                         alt={"project " + data.name}
                         width="100%"
                         className="cursor-pointer bg-slate-800 outline-gray-500 outline outline-2 h-[150px] object-fill sm:min-h-[170px]  md:max-h-[200px]"
@@ -44,9 +39,8 @@ export default function Project({ data }) {
                         <img src="/assets/svg/eye.svg" alt="download" />
                         <a
                             href={data.liveDemoLink}
-                            target={"_blank"}
+                            target={"blank"}
                             rel="noreferrer"
-                            onClick={viewProjectDetails}
                             className="text-xs cursor-pointer"
                         >
                             Live demo
@@ -67,7 +61,7 @@ export default function Project({ data }) {
     )
 }
 
-const ImageLazyLoader = ({ src, ...restProps }) => {
+const ImageLazyLoader = ({ src, slug, ...restProps }) => {
     const [imageSrc, setImageSrc] = useState(null)
     const [hovering, toggleHovering] = useState(false)
     const imageRef = useRef(null)
@@ -89,7 +83,10 @@ const ImageLazyLoader = ({ src, ...restProps }) => {
     }, [src])
 
     return (
-        <span onMouseLeave={() => toggleHovering(false)}>
+        <Link
+            href={`/projects/${slug}`}
+            onMouseLeave={() => toggleHovering(false)}
+        >
             <img
                 onMouseOver={() => toggleHovering(true)}
                 ref={imageRef}
@@ -107,6 +104,6 @@ const ImageLazyLoader = ({ src, ...restProps }) => {
                     </span>
                 </div>
             )}
-        </span>
+        </Link>
     )
 }

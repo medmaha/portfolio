@@ -1,7 +1,6 @@
 import { useContext, useEffect, useLayoutEffect, useRef, useState } from "react"
 import { useMediaScreens } from "../../hooks"
 import { GlobalContext } from "../../Portfolio"
-import "./projectDetail.css"
 
 let closeTimeout
 let closedByButton

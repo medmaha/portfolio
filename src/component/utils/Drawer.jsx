@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef, useContext } from "react"
-import "./Drawer.css"
 
 export default function Drawer({ callback }) {
     const drawerRef = useRef(null)

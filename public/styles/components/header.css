@@ -1,0 +1,14 @@
+.__animate__quote {
+    animation: quote 100ms ease-in 1 forwards;
+    animation-delay: 5s;
+}
+
+@keyframes quote {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(2%);
+    }
+}

@@ -1,12 +1,11 @@
-import "./styles.css"
 import { useEffect, useRef } from "react"
-import { programmingLang } from "./DATA"
+import { programmingLang } from "./../../../db/skill"
 
-export default function Languages() {
+export default function Languages({ programmingLang }) {
     return (
         <>
             <div className="flex gap-4 flex-wrap justify-between items-center w-[95%] md:w-[90%]">
-                {programmingLang.map((lang) => {
+                {programmingLang?.map((lang) => {
                     return <Lang key={lang.name} lang={lang} />
                 })}
             </div>

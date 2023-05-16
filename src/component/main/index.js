@@ -3,12 +3,12 @@ import { Projects } from "./projects"
 import { Skills } from "./skills"
 import { Header } from "./header"
 import { Contact } from "./contact"
-import { useRef, useLayoutEffect } from "react"
+import { useRef, useEffect } from "react"
 
 function Main() {
     const doc = useRef()
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         intersectionObserverFunc(doc.current)
     }, [])
 

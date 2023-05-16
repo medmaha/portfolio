@@ -1,8 +1,8 @@
-import "./styles.css"
 import Project from "./Project"
-import { useEffect } from "react"
-import projectsDATA from "./DATA"
+import { useContext, useEffect } from "react"
+import { projects as projectsDATA } from "../../../db/projects"
 import SectionHeading from "../../utils/SectionHeading"
+import { DatabaseContext } from "../../../../pages/_app"
 
 export const ProjectsContainer = () => {
     useEffect(() => {
