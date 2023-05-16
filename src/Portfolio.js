@@ -5,6 +5,7 @@ import Main from "./component/main"
 import { SocialMedia, Modal, Drawer, ProjectDetail } from "./component/utils"
 import Navbar from "./component/navbar"
 import Footer from "./component/footer/Footer"
+import Alert from "./component/UI/Alert"
 
 export const GlobalContext = createContext()
 
@@ -12,6 +13,7 @@ function Portfolio({ dark, page = "home", children }) {
     const [darkTheme, setDarkTheme] = useState(null)
     const [modal, toggleModal] = useState(false)
     const [drawer, toggleDrawer] = useState(false)
+    const [_alert, setAlert] = useState(null)
     const [projectDetail, setProjectDetail] = useState(null)
 
     const appRef = useRef()
@@ -33,7 +35,6 @@ function Portfolio({ dark, page = "home", children }) {
             <GlobalContext.Provider
                 value={{
                     appRef,
-
                     darkTheme,
                     setDarkTheme,
                     modal,
@@ -42,6 +43,7 @@ function Portfolio({ dark, page = "home", children }) {
                     toggleDrawer,
                     projectDetail,
                     setProjectDetail,
+                    setAlert,
                 }}
             >
                 <Navbar />
@@ -57,6 +59,14 @@ function Portfolio({ dark, page = "home", children }) {
                     </div>
                 )}
                 {page === "details" && <>{children}</>}
+
+                {_alert && (
+                    <Alert
+                        text={_alert.text}
+                        duration={_alert.duration}
+                        error={_alert.error}
+                    />
+                )}
 
                 <SocialMedia />
                 <Footer />

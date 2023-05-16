@@ -1,12 +1,14 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import SectionHeading from "../../utils/SectionHeading"
 // import { sendMeMail } from "./emailMe"
 import axios from "axios"
+import { GlobalContext } from "../../../Portfolio"
 
 export default function Contact() {
     //
     const [loading, setLoading] = useState(false)
     const [invalid, setInvalid] = useState(true)
+    const { setAlert } = useContext(GlobalContext)
 
     async function handleFormSubmit(ev) {
         ev.preventDefault()
@@ -29,18 +31,27 @@ export default function Contact() {
             const { error, name, message } = data
 
             if (!error) {
-                alert(
-                    `Thank you ${name} for sending me a message i'll get back to you as soon as possible`,
-                )
+                setAlert({
+                    text: `Thank you ${name} for sending me a message i'll get back to you as soon as possible`,
+                    duration: 10000,
+                })
                 _form?.reset()
                 return
             }
-            alert(message)
+            setAlert({
+                text: message,
+                duration: 10000,
+                error: true,
+            })
         } catch (error) {
             const msg = error?.response?.data?.message || error.message
             console.error(error)
             console.error(msg)
-            alert(msg)
+            setAlert({
+                text: msg,
+                duration: 10000,
+                error: true,
+            })
         } finally {
             setLoading(false)
         }
@@ -140,7 +151,7 @@ export default function Contact() {
                                 minLength={25}
                                 maxLength={300}
                                 placeholder="message"
-                                className="resize-none outline-gray-400 outline-[2px] focus:outline-sky-500 outline h-full w-full py-2 px-2 min-w-[200px] sm:min-w-[300px] overflow-y-auto dark:text-card-dark dark:placeholder:opacity-50 placeholder:dark:text-card-dark"
+                                className="resize-none outline-gray-400 outline-[2px] focus:outline-sky-500 outline h-full w-full py-2 px-2 min-w-[200px] sm:min-w-[350px] overflow-y-auto dark:text-card-dark dark:placeholder:opacity-50 placeholder:dark:text-card-dark"
                             ></textarea>
                         </div>
                     </div>
@@ -148,7 +159,7 @@ export default function Contact() {
                         <button
                             disabled={loading || invalid}
                             type="submit"
-                            className="disabled:opacity-40 disabled:pointer-events-none disabled:cursor-not-allowed p-4 w-full max-w-[200px] text-xl rounded-lg dark:bg-primary-dark text-card-lightbg-primary-light  dark:text-card-dark"
+                            className="disabled:opacity-40 disabled:pointer-events-none disabled:cursor-not-allowed p-4 w-full max-w-[170px] text-xl rounded-lg dark:bg-primary-dark text-card-light bg-primary-light  dark:text-card-dark"
                         >
                             Submit
                         </button>

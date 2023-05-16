@@ -11,6 +11,14 @@ export default async function handler(req, res) {
         return res.end()
     }
 
+    // return new Promise((resolve) => {
+    //     setTimeout(() => {
+    //         // res.status(200).json({ name })
+    //         res.status(400).json({ message: "Invalid request" })
+    //         resolve(res.end())
+    //     }, 5000)
+    // })
+
     try {
         const myEmail = process.env.PRIMARY_EMAIL
         const { data } = await axios.post(
