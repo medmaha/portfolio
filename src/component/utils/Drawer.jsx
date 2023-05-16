@@ -13,11 +13,12 @@ export default function Drawer({ callback }) {
         if (!drawerRef.current) return
         if (!ev) {
             const activeLink = document.querySelector(".__nav__link li.active")
-            const linkID = activeLink.children[0].dataset.href
+            const linkID = activeLink?.children[0].dataset.href
 
-            drawerRef.current
-                .querySelector(`li[data-href="${linkID}"]`)
-                .classList.add("active")
+            if (linkID)
+                drawerRef.current
+                    .querySelector(`li[data-href="${linkID}"]`)
+                    .classList.add("active")
         }
     }
 

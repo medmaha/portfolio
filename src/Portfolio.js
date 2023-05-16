@@ -58,7 +58,11 @@ function Portfolio({ dark, page = "home", children }) {
                         <Main />
                     </div>
                 )}
-                {page === "details" && <>{children}</>}
+                {page === "details" && (
+                    <main className="ml-[35px] md:ml-[50px] px-2 flex flex-col items-center">
+                        {children}
+                    </main>
+                )}
 
                 {_alert && (
                     <Alert
