@@ -85,26 +85,44 @@ const ImageLazyLoader = ({ src, slug, ...restProps }) => {
     return (
         <Link
             href={`/projects/${slug}`}
-            onMouseLeave={() => toggleHovering(false)}
-            className="block relative hover:scale-[1.1] transition-all duration-300"
+            onPointerLeave={(ev) => {
+                ev.currentTarget.classList.remove("scale-[1.03]")
+                ev.currentTarget
+                    .querySelector(".link")
+                    .classList.remove("group-hover:opacity-100")
+            }}
+            onPointerEnter={(ev) => {
+                console.log(ev.pointerType)
+                if (ev.pointerType === "mouse") {
+                    ev.currentTarget.classList.add("scale-[1.03]")
+                }
+            }}
+            className="block relative transition-all duration-300 group"
         >
             <img
                 onMouseOver={() => toggleHovering(true)}
+                onTouchStartCapture={() => toggleHovering(true)}
+                onTouchStart={() => toggleHovering(false)}
                 ref={imageRef}
                 src={src}
                 {...{ alt: "", ...restProps }}
             />
 
-            {hovering && (
-                <div
-                    onClick={restProps.onClick}
-                    className="absolute top-0 left-0 w-full h-full rounded-[5px] bg-black bg-opacity-70 sm:min-h-[170px] block"
-                >
-                    <span className="inline-flex justify-center items-center w-full sm:min-h-[170px] font-bold text-lg tracking-wide cursor-pointer">
-                        More details?
-                    </span>
-                </div>
-            )}
+            <div
+                onClick={restProps.onClick}
+                onPointerEnter={(ev) => {
+                    if (ev.pointerType === "mouse") {
+                        ev.currentTarget.classList.add(
+                            "group-hover:opacity-100",
+                        )
+                    }
+                }}
+                className="link absolute transition opacity-0  top-0 left-0 w-full h-full rounded-[5px] bg-black bg-opacity-70 sm:min-h-[170px] block"
+            >
+                <span className="inline-flex justify-center items-center w-full sm:min-h-[170px] font-bold text-lg tracking-wide cursor-pointer">
+                    More details?
+                </span>
+            </div>
         </Link>
     )
 }

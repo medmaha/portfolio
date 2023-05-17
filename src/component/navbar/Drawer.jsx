@@ -27,7 +27,11 @@ export default function Drawer({ callback }) {
     useEffect(() => {
         activeLink()
         document.body.addEventListener("click", closeDrawer)
-        return () => document.body.removeEventListener("click", closeDrawer)
+        document.body.addEventListener("touch", closeDrawer)
+        return () => {
+            document.body.removeEventListener("click", closeDrawer)
+            document.body.removeEventListener("touch", closeDrawer)
+        }
     }, [])
 
     function activeLink(ev) {
@@ -101,7 +105,7 @@ export default function Drawer({ callback }) {
 
         document
             .querySelector(".__nav__link li.active")
-            .classList.remove("active")
+            ?.classList.remove("active")
 
         element.classList.add("active")
         targetLink.current = null
