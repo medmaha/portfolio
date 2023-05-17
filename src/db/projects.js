@@ -11,7 +11,7 @@ const projects = [
         intro: "Celehub is a social media platform that allows supporters to connect with their favorite celebrities, while also providing a range of features that promote engagement and interactivity. The platform was designed to create a space where fans and celebrities can interact, share content, and engage in meaningful conversations.",
         githubLink: "https://github.com/medmaha/celesub",
         downloadLink: "",
-        liveDemoLink: "https://celesub.vercel.app",
+        liveDemoLink: "https://celesup.vercel.app",
         technologies: [""],
         thumbnail: "celehub.png",
     },

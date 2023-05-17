@@ -1,7 +1,28 @@
+import { useRouter } from "next/router"
 import React, { useState, useEffect, useRef, useContext } from "react"
 
+let ROUTED_HERE
 export default function Drawer({ callback }) {
     const drawerRef = useRef(null)
+    const targetLink = useRef(null)
+
+    const router = useRouter()
+
+    const routerHandler = () => {
+        if (targetLink.current && ROUTED_HERE) {
+            changeRoute()
+            ROUTED_HERE = false
+        }
+    }
+
+    useEffect(() => {
+        if (router.pathname === "/") {
+            router.events.on("routeChangeComplete", routerHandler)
+            return () => {
+                router.events.off("routeChangeComplete", routerHandler)
+            }
+        }
+    }, [router])
 
     useEffect(() => {
         activeLink()
@@ -40,21 +61,51 @@ export default function Drawer({ callback }) {
     }
 
     function navigate(ev = new Event()) {
-        const linkID = ev.currentTarget.dataset.href
+        // const linkID = ev.currentTarget.dataset.href
 
+        // const targetElement = document.querySelector(
+        //     `section[data-snap]#${linkID}`,
+        // )
+
+        // targetElement.scrollIntoView({
+        //     behavior: "smooth",
+        // })
+
+        // drawerRef.current.querySelector("li.active")?.classList.remove("active")
+
+        // ---------
+        targetLink.current = ev.currentTarget.dataset.href
+        if (router.pathname !== "/") {
+            ROUTED_HERE = true
+            localStorage.setItem("router", targetLink.current)
+            router.back()
+        } else {
+            changeRoute()
+        }
+
+        callback(false)
+    }
+
+    function changeRoute() {
+        const element = document.querySelector(
+            `.__nav__link li[data-link="${targetLink.current?.toLowerCase()}"]`,
+        )
+        const _linkID = element.children[0].dataset.href
         const targetElement = document.querySelector(
-            `section[data-snap]#${linkID}`,
+            `section[data-snap]#${_linkID}`,
         )
 
         targetElement.scrollIntoView({
             behavior: "smooth",
         })
 
-        drawerRef.current.querySelector("li.active")?.classList.remove("active")
+        document
+            .querySelector(".__nav__link li.active")
+            .classList.remove("active")
 
-        callback(false)
+        element.classList.add("active")
+        targetLink.current = null
     }
-
     return (
         <>
             <div

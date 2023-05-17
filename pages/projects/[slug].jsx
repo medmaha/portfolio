@@ -27,19 +27,46 @@ function Project({ data: project, theme, slug }) {
         return (
             <Layout theme={theme}>
                 <Portfolio dark={theme === "dark"} page={"details"}>
-                    <div className="w-full h-full pb-10 mt-[70px] max-w-[1000px] mx-auto">
+                    <div className="w-full h-full min-h-[calc(100vh-120px)] pb-10 mt-[70px] max-w-[1000px] mx-auto">
                         <div className="flex w-full h-full flex-col md:flex-row gap-2">
                             <div
                                 ref={thumbnailRef}
-                                className="px-2 flex md:h-full md:w-max justify-center md:mt-[100px]"
+                                className="px-2 flex md:h-full md:w-max justify-center flex-col items-center gap-2 md:mt-[100px]"
                             >
+                                <h2
+                                    ref={headerRef}
+                                    className="text-center text-2xl font-bold tracking-wider sm:py-4 py-2 block md:hidden"
+                                >
+                                    {project.name}
+                                </h2>
                                 <Image
                                     width={400}
                                     height={250}
                                     src={`/assets/img/${project.thumbnail}`}
-                                    className="rounded-md"
+                                    className="rounded-md border-[2px] dark:border-card-dark border-gray-300"
                                     alt={project.name + "thumbnail"}
                                 />
+                                <a
+                                    href={project.liveDemoLink}
+                                    target={"blank"}
+                                    className="flex gap-1 shadow-lg p-2 rounded-md outline outline-1 focus:outline-2 transition-all group -translate-y-1 focus:translate-y-0
+                                    outline-primary-light dark:outline-primary-dark shadow-primary-light dark:shadow-primary-dark items-center md:mt-4 my-2 flex-wrap justify-center tracking-wide text-primary-light dark:text-primary-dark"
+                                >
+                                    <span>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="18px"
+                                            height="18px"
+                                            fill="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
+                                        </svg>
+                                    </span>
+                                    <span className="text-sm cursor-pointer transition">
+                                        Visit live demo
+                                    </span>
+                                </a>
                             </div>
                             <div
                                 ref={descriptionRef}
@@ -47,7 +74,7 @@ function Project({ data: project, theme, slug }) {
                             >
                                 <h2
                                     ref={headerRef}
-                                    className="text-center text-2xl font-bold tracking-wider sm:py-4 py-2"
+                                    className="text-center text-2xl font-bold tracking-wider sm:py-4 py-2 hidden md:block"
                                 >
                                     {project.name}
                                 </h2>

@@ -79,13 +79,14 @@ const ImageLazyLoader = ({ src, slug, ...restProps }) => {
         //     { root: null, rootMargin: "500px 0px 0px 0px" },
         // )
         // observer.observe(imageRef.current)
-        setImageSrc(src)
+        // setImageSrc(src)
     }, [src])
 
     return (
         <Link
             href={`/projects/${slug}`}
             onMouseLeave={() => toggleHovering(false)}
+            className="block relative hover:scale-[1.1] transition-all duration-300"
         >
             <img
                 onMouseOver={() => toggleHovering(true)}
@@ -97,7 +98,7 @@ const ImageLazyLoader = ({ src, slug, ...restProps }) => {
             {hovering && (
                 <div
                     onClick={restProps.onClick}
-                    className="absolute top-0 left-0 w-full rounded-[5px] bg-black bg-opacity-70 sm:min-h-[170px]"
+                    className="absolute top-0 left-0 w-full h-full rounded-[5px] bg-black bg-opacity-70 sm:min-h-[170px] block"
                 >
                     <span className="inline-flex justify-center items-center w-full sm:min-h-[170px] font-bold text-lg tracking-wide cursor-pointer">
                         More details?

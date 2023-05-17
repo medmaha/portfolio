@@ -6,7 +6,7 @@ export default function ContactForm() {
             <h3 className="text-center capitalize text-xl font-semibold tracking-wider">
                 #CTA Whatsapp
             </h3>
-            <h2 className="text-center capitalize text-3xl mt-4 py-4 font-bold tracking-wider">
+            <h2 className="text-center capitalize text-3xl mt-4 py-4 font-bold tracking-wider ">
                 +220 310 1417
             </h2>
             {/* <div className="max-w-[400px] flex flex-col gap-3">

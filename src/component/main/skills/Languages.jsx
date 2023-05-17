@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react"
 import { programmingLang } from "./../../../db/skill"
 
-export default function Languages({ programmingLang }) {
+export default function Languages() {
     return (
         <>
             <div className="flex gap-4 flex-wrap justify-between items-center w-[95%] md:w-[90%]">

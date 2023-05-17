@@ -2,7 +2,12 @@ import { createContext, useEffect, useRef, useState } from "react"
 
 import Main from "./component/main"
 
-import { SocialMedia, Modal, Drawer, ProjectDetail } from "./component/utils"
+import {
+    SocialMedia,
+    Modal,
+    ProjectDetail,
+    ContactForm,
+} from "./component/utils"
 import Navbar from "./component/navbar"
 import Footer from "./component/footer/Footer"
 import Alert from "./component/UI/Alert"
@@ -24,7 +29,7 @@ function Portfolio({ dark, page = "home", children }) {
 
     useEffect(() => {
         setDarkTheme(!!dark)
-    }, [])
+    }, [page])
 
     return (
         <div
@@ -41,17 +46,16 @@ function Portfolio({ dark, page = "home", children }) {
                     toggleModal,
                     drawer,
                     toggleDrawer,
-                    projectDetail,
-                    setProjectDetail,
                     setAlert,
                 }}
             >
                 <Navbar />
 
-                {/* OVERLAYS */}
-                {projectDetail && <ProjectDetail project={projectDetail} />}
-                {drawer && <Drawer callback={toggleDrawer} />}
-                {modal && <Modal instanceDispatcher={toggleModal} />}
+                {modal && (
+                    <Modal instanceDispatcher={toggleModal}>
+                        <ContactForm />
+                    </Modal>
+                )}
 
                 {page === "home" && (
                     <div className="">
