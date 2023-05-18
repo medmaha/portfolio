@@ -74,7 +74,7 @@ export default function Navbar() {
                                 </g>
                             </svg>
                             <span className="pl-[2px] inline-flex items-end h-[40px] font-bold">
-                                aha
+                                ahamed
                             </span>
                         </Link>
                     </div>
