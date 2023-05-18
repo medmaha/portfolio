@@ -1,26 +1,30 @@
 import { NextRequest, NextResponse } from "next/server"
 
+import { cookies } from "next/headers"
+
 export default async function handle(req, res) {
-    let themeClass = "dark"
+    let theme = "dark"
     const cookieTheme = req.cookies.theme
 
     if (cookieTheme === "dark") {
-        themeClass = "light"
+        theme = "light"
     }
 
     const prodENV = process.env.NODE_ENV === "development"
 
+    const currentDate = new Date()
 
-const currentDate = new Date();
+    const expirationDate = new Date(
+        currentDate.getTime() + 30 * 24 * 60 * 60 * 1000,
+    )
 
-const expirationDate = new Date(currentDate.getTime() + (30 * 24 * 60 * 60 * 1000));
-
-const expires = "expires=" + expirationDate.toUTCString();
+    const expires = "expires=" + expirationDate.toUTCString()
 
     res.setHeader(
         "set-cookie",
-        `theme=${themeClass};httpOnly=true;sameSite=strick;secure=${prodENV};${expires}`,
+        `theme=${theme};httpOnly=true;sameSite=Strict;secure=${prodENV};${expires};path=/`,
     )
+
     res.setHeader("content-type", "application/json")
-    res.status(200).json({ "current-theme": themeClass })
+    res.status(200).json({ "current-theme": theme })
 }

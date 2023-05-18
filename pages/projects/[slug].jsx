@@ -100,10 +100,8 @@ function Project({ data: project, theme, slug }) {
 export async function getServerSideProps({ req, params }) {
     const { slug } = params
 
-    const data = workProjects.find((item) => item.slug === slug)
+    const data = workProjects.find((item) => item.slug === slug) || {}
 
-    if (data) return { props: { data, theme: req.cookies.theme } }
-
-    return { props: { slug } }
+    return { props: { data, theme: req.cookies.theme || "dark" } }
 }
 export default Project

@@ -10,3 +10,7 @@ export default function Home({ theme }) {
         </Layout>
     )
 }
+
+export async function getServerSideProps({ req }) {
+    return { props: { theme: req.cookies.theme || "dark" } }
+}

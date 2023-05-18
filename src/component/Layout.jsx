@@ -4,9 +4,8 @@ import Footer from "./footer/Footer"
 import Navbar from "./navbar"
 
 function Layout({ children, theme }) {
-    const themeClass = theme || "light"
     return (
-        <div data-theme className={`${themeClass}`}>
+        <div data-theme className={`${theme}`}>
             {children}
         </div>
     )
