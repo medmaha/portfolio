@@ -11,6 +11,7 @@ import {
 import Navbar from "./component/navbar"
 import Footer from "./component/footer/Footer"
 import Alert from "./component/UI/Alert"
+import { PAGES_MANIFEST } from "next/dist/shared/lib/constants"
 
 export const GlobalContext = createContext()
 
@@ -58,11 +59,12 @@ function Portfolio({ dark, page = "home", children }) {
                 )}
 
                 {page === "home" && (
-                    <div className="">
+                    <>
                         <Main />
-                    </div>
+                        <SocialMedia />
+                    </>
                 )}
-                {page === "details" && (
+                {["details", "error"].includes(page) && (
                     <main className="ml-[35px] md:ml-[50px] px-2 flex flex-col items-center">
                         {children}
                     </main>
@@ -76,7 +78,6 @@ function Portfolio({ dark, page = "home", children }) {
                     />
                 )}
 
-                <SocialMedia />
                 <Footer />
             </GlobalContext.Provider>
         </div>
