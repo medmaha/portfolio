@@ -22,7 +22,7 @@ export default async function handle(req, res) {
 
     res.setHeader(
         "set-cookie",
-        `theme=${theme};sameSite=Strict;secure=${prodENV};${expires};path=/`,
+        `theme=${theme};sameSite=Strict;${expires};path=/`,
     )
 
     res.setHeader("content-type", "application/json")
