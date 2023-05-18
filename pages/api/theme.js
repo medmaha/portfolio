@@ -15,7 +15,7 @@ const currentDate = new Date();
 
 const expirationDate = new Date(currentDate.getTime() + (30 * 24 * 60 * 60 * 1000));
 
-const expires = "expires="expirationDate.toUTCString();
+const expires = "expires=" + expirationDate.toUTCString();
 
     res.setHeader(
         "set-cookie",
