@@ -7,7 +7,7 @@ export default function Project({ data }) {
 
     return (
         <>
-            <div className="__project card flex flex-col items-center p-3 bg-gray-100 dark:bg-slate-800">
+            <div className="__project card rounded-t-[2rem] rounded-lg flex flex-col items-center p-3 bg-gray-100 dark:bg-slate-800">
                 <span
                     title={data.name}
                     className="text-lg cursor-default inline-block text-center sm:text-xl md:text-2xl font-semibold mt-1 mb-3 tracking-wide truncate w-full"
