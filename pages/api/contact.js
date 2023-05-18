@@ -21,22 +21,20 @@ export default async function handler(req, res) {
 
     try {
         const myEmail = process.env.PRIMARY_EMAIL
-        const { data } = await axios.post(
-            "https://medluxe-smtp.glitch.me/send-mail",
-            {
-                to_mail: myEmail,
-                from_host: "My Portfolio",
-                mailType: "contact",
-                subject: `${subject}`,
-                html: buildEmailHtml({
-                    name,
-                    email,
-                    subject,
-                    message,
-                    heading: "A new message from your Portfolio site",
-                }),
-            },
-        )
+        // "https://medluxe-smtp.glitch.me/send-mail",
+        const { data } = await axios.post("http://localhost:9000/send-mail", {
+            to_mail: myEmail,
+            from_host: "My Portfolio",
+            mailType: "contact",
+            subject: `${subject}`,
+            html: buildEmailHtml({
+                name,
+                email,
+                subject,
+                message,
+                heading: "A new message from your Portfolio site",
+            }),
+        })
 
         if (data.success) {
             res.status(200).json({ name })

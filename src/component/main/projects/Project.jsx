@@ -1,33 +1,24 @@
 import React, { useRef, useEffect, useState, useContext } from "react"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function Project({ data }) {
     "use server"
 
     return (
         <>
-            <div className="__project card min-h-[150px] md:min-h-[170px] flex flex-col items-center p-3 bg-gray-100 dark:bg-slate-800">
+            <div className="__project card flex flex-col items-center p-3 bg-gray-100 dark:bg-slate-800">
                 <span
                     title={data.name}
                     className="text-lg cursor-default inline-block text-center sm:text-xl md:text-2xl font-semibold mt-1 mb-3 tracking-wide truncate w-full"
                 >
                     {data.name}
                 </span>
-                <div className="flex-1 w-full pb-4 relative">
+                <div className="h-full w-full mb-4 relative">
                     <ImageLazyLoader
                         slug={data.slug}
                         src={`/assets/img/${data.thumbnail}`}
-                        // onClick={() => {
-                        //     if (data.liveDemoLink) {
-                        //         const anchorTag = document.createElement("a")
-                        //         anchorTag.setAttribute("target", "_black")
-                        //         anchorTag.href = data.liveDemoLink
-                        //         anchorTag.click()
-                        //     }
-                        // }}
                         alt={"project " + data.name}
-                        width="100%"
-                        className="cursor-pointer bg-slate-800 outline-gray-500 outline outline-2 h-[150px] object-fill sm:min-h-[170px]  md:max-h-[200px]"
                     />
                 </div>
 
@@ -61,7 +52,7 @@ export default function Project({ data }) {
     )
 }
 
-const ImageLazyLoader = ({ src, slug, ...restProps }) => {
+const ImageLazyLoader = ({ src, slug, alt }) => {
     const [imageSrc, setImageSrc] = useState(null)
     const [hovering, toggleHovering] = useState(false)
     const imageRef = useRef(null)
@@ -97,19 +88,21 @@ const ImageLazyLoader = ({ src, slug, ...restProps }) => {
                     ev.currentTarget.classList.add("scale-[1.03]")
                 }
             }}
-            className="block relative transition-all duration-300 group"
+            className="block relative transition-all duration-300 group object-fill w-full"
         >
-            <img
+            <Image
                 onMouseOver={() => toggleHovering(true)}
                 onTouchStartCapture={() => toggleHovering(true)}
                 onTouchStart={() => toggleHovering(false)}
                 ref={imageRef}
                 src={src}
-                {...{ alt: "", ...restProps }}
+                height={200}
+                width={350}
+                alt={alt}
+                className="cursor-pointer bg-slate-800 outline-gray-500 outline outline-2 object-cover"
             />
 
             <div
-                onClick={restProps.onClick}
                 onPointerEnter={(ev) => {
                     if (ev.pointerType === "mouse") {
                         ev.currentTarget.classList.add(

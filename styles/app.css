@@ -79,18 +79,18 @@ input {
 }
 
 .portfolio>div {
-    animation: loaded 450ms ease forwards;
-    transform: translateY(-100vh);
-    transform-origin: center center;
+    animation: loaded 800ms ease forwards;
+    opacity: 0;
+ 
 }
 
 
 @keyframes loaded {
     0% {
-        transform: translateY(-100vh);
+        opacity: 0;
     }
 
     100% {
-        transform: translateY(0);
+        opacity: 1;
     }
 }
