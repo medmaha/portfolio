@@ -6,7 +6,7 @@ export default async function handle(req, res) {
     let theme = "dark"
     const cookieTheme = req.cookies.theme
 
-    if (cookieTheme === "dark") {
+    if (cookieTheme === "dark" || !cookieTheme) {
         theme = "light"
     }
 
@@ -22,7 +22,7 @@ export default async function handle(req, res) {
 
     res.setHeader(
         "set-cookie",
-        `theme=${theme};sameSite=Strict;${expires};path=/`,
+        `theme=${theme};sameSite=Strict;${expires};path=/;secure=${prodENV}`,
     )
 
     res.setHeader("content-type", "application/json")

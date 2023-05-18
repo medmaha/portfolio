@@ -30,7 +30,7 @@ function Portfolio({ dark, page = "home", children }) {
 
     useEffect(() => {
         setDarkTheme(!!dark)
-    }, [page])
+    }, [])
 
     return (
         <div
