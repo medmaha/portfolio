@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { GlobalContext } from "../../../Portfolio"
+import { GlobalContext } from "../../../context/global"
 import Quotes from "./Quote"
 
 export default function Hero() {

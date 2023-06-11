@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect, useRef } from "react"
-import { GlobalContext } from "../../Portfolio"
+import { GlobalContext } from "../../context/global"
 import NavLinks from "./NavLinks"
 import Link from "next/link"
 import Drawer from "./Drawer"

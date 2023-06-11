@@ -42,14 +42,14 @@ function Project({ data: project, theme, slug }) {
                                 <Image
                                     width={400}
                                     height={250}
-                                    src={`/assets/img/${project.thumbnail}`}
+                                    src={`/assets/img/${project.thumbnail_url}`}
                                     className="rounded-md border-[2px] dark:border-card-dark border-gray-300"
                                     alt={project.name + "thumbnail"}
                                 />
                                 <a
                                     href={project.liveDemoLink}
                                     target={"blank"}
-                                    className="flex gap-1 shadow-lg p-2 rounded-md outline outline-1 focus:outline-2 transition-all group -translate-y-1 focus:translate-y-0
+                                    className="flex mt-4 md:mt-0 gap-1 shadow-lg p-2 rounded-md outline outline-1 focus:outline-2 transition-all group -translate-y-1 focus:translate-y-0
                                     outline-primary-light dark:outline-primary-dark shadow-primary-light dark:shadow-primary-dark items-center md:mt-4 my-2 flex-wrap justify-center tracking-wide text-primary-light dark:text-primary-dark"
                                 >
                                     <span>
@@ -79,12 +79,17 @@ function Project({ data: project, theme, slug }) {
                                     {project.name}
                                 </h2>
                                 <div
-                                    data-project-desc
-                                    className="font-medium md:pt-2 flex justify-center flex-col gap-4 tracking-wide sm:px-2 text-sm sm:text-base px-1"
+                                    data-project-desc_
+                                    className="font-medium md:pt-2 flex justify-center flex-col gap-4 tracking-wide sm:px-2 text-sm sm:text-base px-1 md:min-w-[350px]"
                                 >
                                     {project.description?.map((desc, idx) => {
                                         return (
-                                            <p key={idx}>{desc.toString()}</p>
+                                            <p
+                                                key={idx}
+                                                className="md:text-left"
+                                            >
+                                                {desc.toString()}
+                                            </p>
                                         )
                                     })}
                                 </div>

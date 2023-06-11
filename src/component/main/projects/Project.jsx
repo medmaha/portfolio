@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 
-export default function Project({ data }) {
+export default function Project({ data, descriptionClamp = 4 }) {
     "use server"
 
     return (
@@ -17,12 +17,17 @@ export default function Project({ data }) {
                 <div className="h-full w-full mb-4 relative">
                     <ImageLazyLoader
                         slug={data.slug}
-                        src={`/assets/img/${data.thumbnail}`}
+                        src={`/assets/img/${data.thumbnail_url}`}
                         alt={"project " + data.name}
                     />
                 </div>
 
-                <p className="text-center intro text-sm tracking-wide px-2 font-light text-gray-700 dark:text-gray-300">
+                <p
+                    className={
+                        `line-clamp-${descriptionClamp}` +
+                        "line-clamp-3 text-center intro text-sm tracking-wide px-2 font-light text-gray-700 dark:text-gray-300"
+                    }
+                >
                     {data.intro}
                 </p>
                 <div className="flex justify-between gap-2 w-full mt-4">
@@ -96,7 +101,7 @@ const ImageLazyLoader = ({ src, slug, alt }) => {
                 onTouchStart={() => toggleHovering(false)}
                 ref={imageRef}
                 src={src}
-                height={200}
+                height={250}
                 width={350}
                 alt={alt}
                 className="cursor-pointer bg-slate-800 outline-gray-500 outline outline-2 object-cover"

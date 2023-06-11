@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { GlobalContext } from "../../Portfolio"
+import { GlobalContext } from "../../context/global"
 import WhatsappContact from "./WhatsappContact"
 
 export default function SocialMedia() {

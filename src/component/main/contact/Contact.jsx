@@ -2,7 +2,7 @@ import { useContext, useState } from "react"
 import SectionHeading from "../../utils/SectionHeading"
 // import { sendMeMail } from "./emailMe"
 import axios from "axios"
-import { GlobalContext } from "../../../Portfolio"
+import { GlobalContext } from "../../../context/global"
 
 export default function Contact() {
     //

@@ -13,7 +13,7 @@ const projects = [
         downloadLink: "",
         liveDemoLink: "https://chatvite.vercel.app",
         technologies: [""],
-        thumbnail: "chatvite.png",
+        thumbnail_url: "chatvite.png",
     },
     {
         name: "Codedeluxe",
@@ -29,7 +29,7 @@ const projects = [
         downloadLink: "",
         liveDemoLink: "https://codedeluxe.vercel.app",
         technologies: ["SvelteKit", "MongoDB"],
-        thumbnail: "codedeluxe.png",
+        thumbnail_url: "codedeluxe.png",
     },
     {
         name: "RapidCheck",
@@ -46,7 +46,7 @@ const projects = [
         downloadLink: "",
         liveDemoLink: "https://rapidcheck.vercel.app",
         technologies: [""],
-        thumbnail: "rapidcheck.png",
+        thumbnail_url: "rapidcheck.png",
     },
     {
         name: "Celehub",
@@ -62,7 +62,7 @@ const projects = [
         downloadLink: "",
         liveDemoLink: "https://celesup.vercel.app",
         technologies: [""],
-        thumbnail: "celehub.png",
+        thumbnail_url: "celehub.png",
     },
 
     {
@@ -78,7 +78,7 @@ const projects = [
         downloadLink: "",
         liveDemoLink: "https://movieplant.netlify.app",
         technologies: [""],
-        thumbnail: "movieland.png",
+        thumbnail_url: "movieland.png",
     },
     {
         name: "Tech Electrical (TETI)",
@@ -95,7 +95,7 @@ const projects = [
         downloadLink: "",
         liveDemoLink: "https://tech-electric.vercel.app",
         technologies: [""],
-        thumbnail: "tec-electrical.png",
+        thumbnail_url: "tec-electrical.png",
     },
     {
         name: "Path Finder",
@@ -111,24 +111,39 @@ const projects = [
         downloadLink: "",
         liveDemoLink: "https://pathfv.netlify.app/",
         technologies: [""],
-        thumbnail: "path-visualizer.png",
+        thumbnail_url: "path-visualizer.png",
     },
-    // {
-    //     name: "REST Tester",
-    //     slug: "rest-tester",
-    //     description: [
-    //         "Rest Tester is an innovative web application that allows users to test RESTful APIs with ease and efficiency. The platform is designed to be intuitive and user-friendly, with a range of features that make it easy to test and modify API requests and responses.",
-    //         "Built using Vanilla JavaScript and Axios, Rest Tester is a lightweight and powerful web application that provides a full-fledged custom code editor for JSON data. This makes it easy for users to create and modify JSON data, and to test their RESTful API requests with precision and accuracy.",
-    //         " One of the key features of Rest Tester is its history record, which is stored in the user's browser storage for easy access and modification. This makes it easy for users to keep track of their API testing history and to make changes and adjustments as needed.",
-    //         "To ensure maximum compatibility and efficiency, Rest Tester is compiled and bundled using Vite, a powerful build tool that provides fast and efficient compilation and bundling for web applications. This ensures that the application runs smoothly and efficiently on a range of different devices and platforms.",
-    //         "Whether you're a developer looking to test your APIs or a user looking to interact with different RESTful services, Rest Tester provides a powerful and flexible platform for testing and debugging your API requests and responses.,",
-    //     ],
-    //     intro: "Rest Tester is an innovative web application that allows users to test RESTful APIs with ease and efficiency. The platform is designed to be intuitive and user-friendly, with a range of features that make it easy to test and modify API requests and responses.",
-    //     githubLink: "https://github.com/medmaha/RestApiTester",
-    //     downloadLink: "",
-    //     liveDemoLink: "https://resttester.netlify.app",
-    //     technologies: [""],
-    //     thumbnail: "postman.png",
-    // },
+    {
+        name: "REST Tester",
+        slug: "rest-tester",
+        description: [
+            "Rest Tester is an innovative web application that allows users to test RESTful APIs with ease and efficiency. The platform is designed to be intuitive and user-friendly, with a range of features that make it easy to test and modify API requests and responses.",
+            "Built using Vanilla JavaScript and Axios, Rest Tester is a lightweight and powerful web application that provides a full-fledged custom code editor for JSON data. This makes it easy for users to create and modify JSON data, and to test their RESTful API requests with precision and accuracy.",
+            " One of the key features of Rest Tester is its history record, which is stored in the user's browser storage for easy access and modification. This makes it easy for users to keep track of their API testing history and to make changes and adjustments as needed.",
+            "To ensure maximum compatibility and efficiency, Rest Tester is compiled and bundled using Vite, a powerful build tool that provides fast and efficient compilation and bundling for web applications. This ensures that the application runs smoothly and efficiently on a range of different devices and platforms.",
+            "Whether you're a developer looking to test your APIs or a user looking to interact with different RESTful services, Rest Tester provides a powerful and flexible platform for testing and debugging your API requests and responses.,",
+        ],
+        intro: "Rest Tester is an innovative web application that allows users to test RESTful APIs with ease and efficiency. The platform is designed to be intuitive and user-friendly, with a range of features that make it easy to test and modify API requests and responses.",
+        githubLink: "https://github.com/medmaha/RestApiTester",
+        downloadLink: "",
+        liveDemoLink: "https://resttester.netlify.app",
+        technologies: [""],
+        thumbnail_url: "postman.png",
+    },
 ]
+
+// interface Project {
+//     name: string
+//     slug: string
+//     description: string[]
+//     intro: string
+//     githubLink: string
+//     downloadLink: string
+//     liveDemoLink: string
+//     technologies: string[]
+//     thumbnail_url: string
+// }
+// type ProjectsArray = Array<Project>
+
+// export { projects as ProjectsArray }
 export { projects }

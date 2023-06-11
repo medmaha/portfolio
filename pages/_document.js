@@ -9,7 +9,7 @@ export default function Document(props) {
             <Head>
                 <link rel="shortcut icon" href="/favicon.ico" />
             </Head>
-            <body>
+            <body className="m-0 p-0 box-border">
                 <Main />
                 <NextScript />
             </body>
