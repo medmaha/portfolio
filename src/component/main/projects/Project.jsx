@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, useContext } from "react"
+import React, { useRef, useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -40,7 +40,7 @@ export default function Project({ data }) {
                     <div className="flex gap-1 items-center flex-wrap justify-center text-sm tracking-wide">
                         <img src="/assets/svg/code-block.svg" alt="download" />
                         <a
-                            {...{ href: data.githubLink, target: "_blank" }}
+                            {...{ href: data.githubLink, target: "blank" }}
                             className="text-xs cursor-pointer"
                         >
                             Source code
