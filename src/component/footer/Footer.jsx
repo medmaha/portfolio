@@ -14,7 +14,7 @@ export default function Footer() {
                     dark:text-slate-400
                     h-full"
                 >
-                    Copyright © {{ year }} Mahamed Toure
+                    Copyright © {year} Mahamed Toure
                 </span>
                 {/* <span
                     className="text-center opacity-90 text-sm underline underline-offset-4
