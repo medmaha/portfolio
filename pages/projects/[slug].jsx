@@ -107,6 +107,6 @@ export async function getServerSideProps({ req, params }) {
 
     const data = workProjects.find((item) => item.slug === slug) || {}
 
-    return { props: { data, theme: req.cookies.theme || "dark" } }
+    return { props: { data, theme: req.cookies.theme || "light" } }
 }
 export default Project

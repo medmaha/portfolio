@@ -1,6 +1,5 @@
 import { useContext, useState } from "react"
 import SectionHeading from "../../utils/SectionHeading"
-// import { sendMeMail } from "./emailMe"
 import axios from "axios"
 import { GlobalContext } from "../../../context/global"
 
@@ -46,7 +45,6 @@ export default function Contact() {
         } catch (error) {
             const msg = error?.response?.data?.message || error.message
             console.error(error)
-            console.error(msg)
             setAlert({
                 text: msg,
                 duration: 10000,
@@ -115,7 +113,7 @@ export default function Contact() {
                                     required
                                     name="name"
                                     placeholder="your name"
-                                    className="outline-gray-400 font-medium outline-[2px] focus:outline-sky-500 outline py-2 px-2 w-full min-w-[200px] sm:min-w-[300px] dark:text-card-dark dark:placeholder:opacity-50 placeholder:dark:text-card-dark"
+                                    className="outline-gray-400 font-semibold outline-[2px] focus:outline-sky-500 outline py-2 px-2 w-full min-w-[200px] sm:min-w-[300px] dark:text-card-dark dark:placeholder:opacity-50 placeholder:dark:text-card-dark"
                                 />
                             </div>
                             <div className="flex flex-col gap-1">
@@ -126,7 +124,7 @@ export default function Contact() {
                                     id="email"
                                     name="email"
                                     placeholder="email address"
-                                    className="outline-gray-400 font-medium outline-[2px] focus:outline-sky-500 outline py-2 px-2 w-full min-w-[200px] sm:min-w-[300px] dark:text-card-dark dark:placeholder:opacity-50 placeholder:dark:text-card-dark"
+                                    className="outline-gray-400 font-semibold outline-[2px] focus:outline-sky-500 outline py-2 px-2 w-full min-w-[200px] sm:min-w-[300px] dark:text-card-dark dark:placeholder:opacity-50 placeholder:dark:text-card-dark"
                                 />
                             </div>
                             <div className="flex flex-col gap-1">
@@ -138,7 +136,7 @@ export default function Contact() {
                                     placeholder="subject"
                                     minLength={10}
                                     name="subject"
-                                    className="outline-gray-400 font-medium outline-[2px] focus:outline-sky-500 outline py-2 px-2 w-full min-w-[200px] sm:min-w-[300px] dark:text-card-dark dark:placeholder:opacity-50 placeholder:dark:text-card-dark"
+                                    className="outline-gray-400 font-semibold outline-[2px] focus:outline-sky-500 outline py-2 px-2 w-full min-w-[200px] sm:min-w-[300px] dark:text-card-dark dark:placeholder:opacity-50 placeholder:dark:text-card-dark"
                                 />
                             </div>
                         </div>

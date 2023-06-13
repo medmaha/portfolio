@@ -1,5 +1,5 @@
 import Hero from "./Hero"
-import Quotes from "./Q"
+import Quotes from "./Quotes"
 
 export default function Header() {
     return (

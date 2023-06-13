@@ -58,25 +58,8 @@ export default function Project({ data, descriptionClamp = 4 }) {
 }
 
 const ImageLazyLoader = ({ src, slug, alt }) => {
-    const [imageSrc, setImageSrc] = useState(null)
     const [hovering, toggleHovering] = useState(false)
     const imageRef = useRef(null)
-
-    useEffect(() => {
-        // const observer = new IntersectionObserver(
-        //     (entries) => {
-        //         entries.forEach((entry) => {
-        //             if (entry.isIntersecting) {
-        //                 setImageSrc(src)
-        //                 // observer.disconnect()
-        //             }
-        //         })
-        //     },
-        //     { root: null, rootMargin: "500px 0px 0px 0px" },
-        // )
-        // observer.observe(imageRef.current)
-        // setImageSrc(src)
-    }, [src])
 
     return (
         <Link

@@ -15,5 +15,5 @@ export default function Home({ theme }) {
 }
 
 export async function getServerSideProps({ req }) {
-    return { props: { theme: req.cookies.theme || "dark" } }
+    return { props: { theme: req.cookies.theme || "light" } }
 }

@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from "react"
+import { useEffect, useState } from "react"
 
 function useMediaScreens() {
     const [screen, setScreen] = useState()
@@ -38,7 +38,7 @@ function useMediaScreens() {
         return w
     }
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         const width = window.outerWidth
         let w = getScreenType(width)
         setScreen({ width: w })

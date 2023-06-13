@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef } from "react"
-import { GlobalContext } from "../../Portfolio"
+import { GlobalContext } from "../../context/global"
 
 export default function Alert({ text, error = false, duration = 5000 }) {
     const { setAlert } = useContext(GlobalContext)

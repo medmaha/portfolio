@@ -3,43 +3,44 @@ import { useEffect, useState } from "react"
 let timeoutRef
 
 const QUOTE_TIMING = 5000
-export default function Quote() {
-    const quotesList = [
-        {
-            text: "Coding is my passion! so i never stop learning!",
-            image: "coding.png",
-        },
-        {
-            text: "Do what you love and love what you do!",
-            image: "heart.png",
-        },
-        {
-            text: "It does not matter how slowly you go as long as you do not stop.",
-            image: "perseverance.png",
-        },
-        {
-            text: "Believe you can and you're halfway there.",
-            image: "believe.png",
-        },
-        {
-            text: "The best way to predict your future is to create it.",
-            image: "future.png",
-        },
-        { text: "Quality is not an act, it is a habit.", image: "quality.png" },
-        {
-            text: "The only true wisdom is in knowing you know nothing.",
-            image: "wisdom.png",
-        },
-        {
-            text: "Something inside you is greater than any obstacle.",
-            image: "believe2.png",
-        },
-        {
-            text: "Be the change you wish to see in the world.",
-            image: "change.png",
-        },
-    ]
 
+const quotesList = [
+    {
+        text: "Coding is my passion! so i never stop learning!",
+        image: "coding.png",
+    },
+    {
+        text: "Do what you love and love what you do!",
+        image: "heart.png",
+    },
+    {
+        text: "It does not matter how slowly you go as long as you do not stop.",
+        image: "perseverance.png",
+    },
+    {
+        text: "Believe you can and you're halfway there.",
+        image: "believe.png",
+    },
+    {
+        text: "The best way to predict your future is to create it.",
+        image: "future.png",
+    },
+    { text: "Quality is not an act, it is a habit.", image: "quality.png" },
+    {
+        text: "The only true wisdom is in knowing you know nothing.",
+        image: "wisdom.png",
+    },
+    {
+        text: "Something inside you is greater than any obstacle.",
+        image: "believe2.png",
+    },
+    {
+        text: "Be the change you wish to see in the world.",
+        image: "change.png",
+    },
+]
+
+export default function Quote() {
     const [quote, updateQuote] = useState()
 
     useEffect(() => {

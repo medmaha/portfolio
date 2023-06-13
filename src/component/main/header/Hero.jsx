@@ -1,13 +1,12 @@
 import React, { useContext } from "react"
 import { GlobalContext } from "../../../context/global"
-import Quotes from "./Quote"
 
 export default function Hero() {
     const context = useContext(GlobalContext)
     return (
         <div className="flex items-center flex-col h-full mt-[20px]">
             <h1
-                className={`sm:text-3xl text-2xl md:text-3xl text-center tracking-wide font-semibold capitalize`}
+                className={`sm:text-3xl text-2xl md:text-3xl xl:text-4xl text-center tracking-wide font-bold capitalize`}
             >
                 I'm Toure Mahamed
             </h1>

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useLayoutEffect, useRef, useState } from "react"
+import { useContext, useEffect, useRef, useState } from "react"
 import { useMediaScreens } from "../../hooks"
 import { GlobalContext } from "../../Portfolio"
 
@@ -14,7 +14,7 @@ function ProjectDetail({ project }) {
     const headerRef = useRef(null)
     const descriptionRef = useRef(null)
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         window.scrollTo(0, 0)
         document.body.style.overflow = "hidden"
 

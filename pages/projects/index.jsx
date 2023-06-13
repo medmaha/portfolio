@@ -17,6 +17,7 @@ export default function Home({ theme }) {
             observer.disconnect()
         }
     }, [])
+
     return (
         <Layout theme={theme}>
             <ProjectsPage dark={theme === "dark"}>
@@ -192,4 +193,8 @@ const ImageLazyLoader = ({ src, slug, alt }) => {
             </div>
         </Link>
     )
+}
+
+export async function getServerSideProps({ req }) {
+    return { props: { theme: req.cookies.theme || "light" } }
 }
