@@ -77,7 +77,7 @@ const projects = [
         intro: "TETI (Tech Electrical Training Institute) is a comprehensive website that provides technical training courses, sales of solar and electrical accessories, and services such as electrical and satellite installations. The website is built using SvelteKit, a powerful web framework that allows for seamless server-side rendering and efficient client-side updates. MongoDB is used as the database to store and manage data. Tailwind CSS is used to style the website and create a responsive and modern design.",
         githubLink: "https://github.com/medmaha/teti",
         downloadLink: "",
-        liveDemoLink: "https://teti.vercel.app",
+        liveDemoLink: "https://teti-gm.vercel.app",
         technologies: [""],
         thumbnail_url: "tec-electrical.png",
     },

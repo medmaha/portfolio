@@ -63,9 +63,12 @@ function Portfolio({ dark, page = "home", children }) {
                     </>
                 )}
                 {["details", "error"].includes(page) && (
-                    <main className="ml-[35px] md:ml-[50px] px-2 flex flex-col items-center">
-                        {children}
-                    </main>
+                    <>
+                        <SocialMedia />
+                        <main className="ml-[35px] md:ml-[50px] px-2 flex flex-col items-center">
+                            {children}
+                        </main>
+                    </>
                 )}
 
                 {_alert && (

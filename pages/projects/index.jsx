@@ -12,56 +12,56 @@ export default function Home({ theme }) {
 
     useEffect(() => {
         const observer = intersectionObserverFunc(doc.current)
+        const element = document.querySelector('li[data-link="myworks"]')
+
+        if (element) {
+            element.classList.add("active")
+        }
 
         return () => {
             observer.disconnect()
+            if (element) element.classList.remove("active")
         }
     }, [])
 
     return (
         <Layout theme={theme}>
             <ProjectsPage dark={theme === "dark"}>
-                <section className="">
-                    <main
-                        ref={doc}
-                        className="ml-[35px] md:ml-[50px] px-2 flex flex-col items-center"
-                    >
-                        <div className="py-4">
-                            <h1 className="pt-20 text-xl tracking-wide font-bold text-center px-2">
-                                My Past Projects
-                            </h1>
-                            <p className="text-center p-2">
-                                These are some of the products I have worked on
-                                during my self-taught journey.
-                            </p>
-                        </div>
-                        <div className="max-w-[900px] mx-auto pt-6">
-                            {/* <ProjectsContainer
+                <main
+                    ref={doc}
+                    className="ml-[35px] md:ml-[50px] px-2 flex flex-col items-center pb-16"
+                >
+                    <div className="py-4">
+                        <h1 className="pt-20 text-2xl tracking-wider font-bold text-center px-2">
+                            My Past Projects
+                        </h1>
+                        <p className="text-center p-2 max-w-[50ch]">
+                            These are some of the products I have worked on
+                            during my self-taught journey.
+                        </p>
+                    </div>
+                    <div className="max-w-[900px] mx-auto pt-6">
+                        {/* <ProjectsContainer
                             sections={false}
                             projectsLink={false}
                         /> */}
 
-                            <div className="grid justify-center  sm:gap-4 gap-2 mt-4">
-                                {projectsData.map((data, idx) => {
-                                    return (
-                                        <Project
-                                            key={idx}
-                                            data={data}
-                                            descriptionClamp={5}
-                                        />
-                                    )
-                                })}
-                            </div>
+                        <div className="grid justify-center  sm:gap-4 gap-2 mt-4">
+                            {projectsData.map((data, idx) => {
+                                return (
+                                    <Project
+                                        key={idx}
+                                        data={data}
+                                        descriptionClamp={5}
+                                    />
+                                )
+                            })}
                         </div>
-                    </main>
-                </section>
+                    </div>
+                </main>
             </ProjectsPage>
         </Layout>
     )
-}
-
-export async function getServerSideProps({ req }) {
-    return { props: { theme: req.cookies.theme || "dark" } }
 }
 
 function Project({ data }) {
@@ -84,11 +84,18 @@ function Project({ data }) {
                     </h4>
 
                     <p
+                        style={{
+                            overflow: "hidden",
+                            "-webkit-box-orient": "vertical",
+                            "-webkit-line-clamp": 5,
+                        }}
                         className={
-                            "line-clamp-3 px-1 sm:p-0 text-center sm:text-left text-sm sm:text-base font-light text-gray-700 dark:text-gray-300 inline-block max-w-[60ch] sm:max-w-[auto]"
+                            "line-clamp-5 px-1 sm:p-0 text-center sm:text-left text-sm sm:text-base font-light text-gray-700 dark:text-gray-300 inline-block max-w-[60ch] sm:max-w-[auto]"
                         }
                     >
-                        {data.intro} {"  "}
+                        {data.intro}
+                        {!!String(data.intro.endsWith(".")) ? ".." : "..."}
+                        {"  "}
                         <Link
                             href={`/projects/${data.slug}`}
                             className="inline text-primary-light dark:text-primary-dark text-xs font-semibold tracking-wide"

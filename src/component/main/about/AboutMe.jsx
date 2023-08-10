@@ -42,11 +42,11 @@ export default function AboutMe() {
                         <a
                             target={"_blank"}
                             rel="noreferrer"
-                            href="/assets/resume.pdf"
+                            href="https://resume-mahamed.vercel.app"
                             // onClick={() => toggleResume(true)}
                             className="bg-primary-light dark:bg-primary-dark hover:bg-opacity-100 bg-opacity-90 min-w-[200px] text-center transition font-semibold tracking-wide text-card-light dark:text-card-dark rounded-md py-2 px-4 capitalize"
                         >
-                            my resume
+                            Grab Resume
                         </a>
                     </div>
                 </div>

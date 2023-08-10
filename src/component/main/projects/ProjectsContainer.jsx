@@ -42,7 +42,7 @@ export const ProjectsContainer = ({
                     )
                 })}
             </div>
-            {projectsLink && (
+            {/* {projectsLink && (
                 <div className="py-4 flex justify-center">
                     <Link
                         href="/projects"
@@ -51,7 +51,7 @@ export const ProjectsContainer = ({
                         See more projects?
                     </Link>
                 </div>
-            )}
+            )} */}
 
             {sections && (
                 <h3 className="text-center text-2xl pt-4 tracking-wide font-semibold">

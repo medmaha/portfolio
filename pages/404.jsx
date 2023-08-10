@@ -17,10 +17,10 @@ export default function Home() {
 
     if (theme)
         return (
-            <Layout theme={"dark"}>
-                <div className="max-w-[1000px] mx-auto">
+            <Layout theme={theme}>
+                <div className="">
                     <Portfolio dark={theme === "dark"} page="error">
-                        <div className="w-full h-full min-h-[calc(100vh-125px)] pb-10 mt-[70px] max-w-[1000px] mx-auto">
+                        <div className="w-full h-full min-h-[91.5vh] py-16">
                             <div className="py-10"></div>
                             <h1 className="text-center font-bold tracking-wide uppercase">
                                 Page Not Found
