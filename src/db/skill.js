@@ -6,16 +6,28 @@ export const programmingLang = [
         animation: "animate-left",
     },
     {
-        name: "Node",
+        name: "NodeJs",
         score: "87%",
         color: "#099776",
         animation: "animate-right",
     },
+    // {
+    //     name: "Javascript",
+    //     score: "93%",
+    //     color: "#fbbf24",
+    //     animation: "animate-left",
+    // },
     {
-        name: "Javascript",
-        score: "93%",
-        color: "#fbbf24",
-        animation: "animate-left",
+        name: "Typescript",
+        score: "85%",
+        color: "#64748b",
+        animation: "animate-right",
+    },
+    {
+        name: "Php",
+        score: "45%",
+        color: "#a78bfa",
+        animation: "animate-right",
     },
     {
         name: "Html",
@@ -29,22 +41,11 @@ export const programmingLang = [
         color: "#db2777",
         animation: "animate-left",
     },
-    {
-        name: "Typescript",
-        score: "85%",
-        color: "#64748b",
-        animation: "animate-right",
-    },
-    {
-        name: "GIT",
-        score: "65%",
-        color: "#F05032",
-        animation: "animate-left",
-    },
-    {
-        name: "Php",
-        score: "45%",
-        color: "#a78bfa",
-        animation: "animate-right",
-    },
+
+    // {
+    //     name: "GIT",
+    //     score: "65%",
+    //     color: "#F05032",
+    //     animation: "animate-left",
+    // },
 ]

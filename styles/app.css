@@ -49,8 +49,9 @@ input {
 .dark select,
 .dark input {
     background-color: #e2e8f0;
-    /* color: #111827; */
+    color: #101114;
     letter-spacing: 1px;
+    font-size: larger;
     font-weight: lighter;
 }
 

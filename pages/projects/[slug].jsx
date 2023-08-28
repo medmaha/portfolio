@@ -28,10 +28,10 @@ function Project({ data: project, theme, slug }) {
             <Layout theme={theme}>
                 <Portfolio dark={theme === "dark"} page={"details"}>
                     <div className="w-full h-full min-h-[calc(100vh-120px)] pb-10 mt-[70px] max-w-[1000px] mx-auto">
-                        <div className="flex w-full h-full flex-col md:flex-row gap-2">
+                        <div className="grid md:grid-cols-2 w-full gap-6 md:gap-2">
                             <div
                                 ref={thumbnailRef}
-                                className="px-2 flex md:h-full md:w-max justify-center flex-col items-center gap-2 md:mt-[100px]"
+                                className="px-2 flex h-max justify-center flex-col items-center gap-2 md:mt-[100px]"
                             >
                                 <h2
                                     ref={headerRef}
@@ -39,17 +39,19 @@ function Project({ data: project, theme, slug }) {
                                 >
                                     {project.name}
                                 </h2>
-                                <Image
-                                    width={400}
-                                    height={250}
-                                    src={`/assets/img/${project.thumbnail_url}`}
-                                    className="rounded-md border-[2px] dark:border-card-dark border-gray-300"
-                                    alt={project.name + "thumbnail"}
-                                />
+                                <div className="">
+                                    <Image
+                                        width={400}
+                                        height={250}
+                                        src={`/assets/img/${project.thumbnail_url}`}
+                                        className="rounded-md border-[2px] dark:border-card-dark border-gray-300"
+                                        alt={project.name + "thumbnail"}
+                                    />
+                                </div>
                                 <a
                                     href={project.liveDemoLink}
                                     target={"blank"}
-                                    className="flex mt-4 md:mt-0 gap-1 shadow-lg p-2 rounded-md outline outline-1 focus:outline-2 transition-all group -translate-y-1 focus:translate-y-0
+                                    className="flex mt-4 gap-1 shadow-lg p-2 rounded-md outline outline-1 focus:outline-2 transition-all group -translate-y-1 focus:translate-y-0
                                     outline-primary-light dark:outline-primary-dark shadow-primary-light dark:shadow-primary-dark items-center md:mt-4 my-2 flex-wrap justify-center tracking-wide text-primary-light dark:text-primary-dark"
                                 >
                                     <span>
@@ -86,7 +88,7 @@ function Project({ data: project, theme, slug }) {
                                         return (
                                             <p
                                                 key={idx}
-                                                className="md:text-left"
+                                                className="md:text-left text-sm font-semibold tracking-wide leading-relaxed"
                                             >
                                                 {desc.toString()}
                                             </p>

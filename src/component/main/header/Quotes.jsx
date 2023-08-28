@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 
 let timeoutRef
 
-const QUOTE_TIMING = 5000
+const QUOTE_TIMING = 3000
 
 const quotesList = [
     {
@@ -69,7 +69,7 @@ export default function Quote() {
     return (
         <div className="absolute bottom-[-2em] left-0 w-full">
             <div className="flex justify-center py-2 w-max mx-auto h-max max-w-full gap-[1px] opacity-80">
-                <span className="dark:text-slate-400 text-slate-700">
+                <span className="dark:text-[#00ffffca] text-[#1b1bee]">
                     <svg
                         fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg"
@@ -83,7 +83,7 @@ export default function Quote() {
                 <span className="tracking-wider text.sm font-light text-center pt-1 dark:text-slate-400 text-slate-600">
                     {quote}
                 </span>
-                <span className="dark:text-slate-400 text-slate-700">
+                <span className="dark:text-[#00ffffca] text-[#1b1bee]">
                     <svg
                         fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg"

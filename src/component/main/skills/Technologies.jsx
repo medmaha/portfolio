@@ -57,12 +57,12 @@ const technologies = [
         backgroundColor: "#292929", // dark background
         textColor: "#fff", // light text color
     },
-    // {
-    //     name: "Angular",
-    //     color: "#DD0031", // Angular brand color
-    //     backgroundColor: "#fff", // white background
-    //     textColor: "#DD0031", // dark text color
-    // },
+    {
+        name: "Angular",
+        color: "#DD0031", // Angular brand color
+        backgroundColor: "#fff", // white background
+        textColor: "#DD0031", // dark text color
+    },
     {
         name: "Express",
         color: "#000000", // Express brand color
@@ -82,21 +82,27 @@ const technologies = [
         textColor: "#764ABC", // dark text color
     },
     {
+        name: "NextJs",
+        color: "#111", // Nextjs brand color
+        backgroundColor: "#fff", // white background
+        textColor: "#764ABC", // dark text color
+    },
+    {
         name: "Redis",
         color: "#DC382D", // Redis brand color
         backgroundColor: "#fff", // white background
         textColor: "#DC382D", // dark text color
     },
     {
+        name: "Firebase",
+        color: "#a07c04", // Firebase brand color
+        backgroundColor: "#fff", // white background
+        textColor: "#222", // dark text color
+    },
+    {
         name: "Git",
         color: "#F05032", // Git brand color
         backgroundColor: "#fff", // white background
         textColor: "#F05032", // dark text color
-    },
-    {
-        name: "Node",
-        color: "#68A063", // Node brand color
-        backgroundColor: "#fff", // white background
-        textColor: "#68A063", // dark text color
     },
 ]

@@ -17,36 +17,35 @@ export default function AboutMe() {
                 </h3>
                 <div className="w-full py-4 max-w-[40ch] sm:max-w-[50ch] md:max-w-[60ch] lg:max-w-[75ch]">
                     <h2 className="text-xl text-center tracking-wide font-bold mb-4">
-                        Self-Taught Full-Stack Developer
+                        Full-Stack Developer
                     </h2>
-                    <p className="text-center dark:text-gray-300 mb-4">
+                    <p className="text-center dark:text-gray-300 mb-2 tracking-wide leading-relaxed text-lg">
                         I am a driven and self-taught full-stack developer with
-                        2 years of experience. My passion for technology and
-                        programming has led me to pursue a career in full-stack
-                        development.
+                        over 3 years of experience. My passion for technology
+                        and programming has led me to pursue a career in
+                        full-stack development.
                     </p>
-                    <p className="text-center dark:text-gray-300 mb-4">
+                    <p className="text-center dark:text-gray-300 mb-2 tracking-wide leading-relaxed text-lg">
                         Throughout my career, I have honed my skills by working
                         on various projects and continuously learning. I have
                         strong experience in front-end and back-end
                         technologies, including React, Node.js, Django, and
                         MongoDB.
                     </p>
-                    <p className="text-center dark:text-gray-300">
+                    <p className="text-center dark:text-gray-300 mb-2 tracking-wide leading-relaxed text-lg">
                         I am committed to delivering high-quality, efficient,
                         and maintainable code. I am always eager to take on new
-                        challenges and expand my skillset to help me grow as a
+                        challenges and expand my skill-set to help me grow as a
                         developer.
                     </p>
                     <div className="flex justify-center items-center mt-4 pt-2">
                         <a
                             target={"_blank"}
-                            rel="noreferrer"
-                            href="https://resume-mahamed.vercel.app"
+                            href="/assets/Mahamed Toure - resume.pdf"
                             // onClick={() => toggleResume(true)}
                             className="bg-primary-light dark:bg-primary-dark hover:bg-opacity-100 bg-opacity-90 min-w-[200px] text-center transition font-semibold tracking-wide text-card-light dark:text-card-dark rounded-md py-2 px-4 capitalize"
                         >
-                            Grab Resume
+                            My Resume
                         </a>
                     </div>
                 </div>

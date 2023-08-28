@@ -18,7 +18,7 @@
 }
 
 .__nav__link .active {
-    border-bottom: 2px solid rgb(27, 27, 238);
+    border-bottom: 2px solid #1b1bee;
 }
 
 .dark .__nav__link .active {
