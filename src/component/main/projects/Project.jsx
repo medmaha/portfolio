@@ -25,7 +25,7 @@ export default function Project({ data, descriptionClamp = 4 }) {
                 <p
                     className={
                         `line-clamp-${descriptionClamp}` +
-                        "line-clamp-3 text-center intro text-sm tracking-wide px-2 font-light text-gray-700 dark:text-gray-300"
+                        "line-clamp-3 text-center intro text-sm tracking-wide px-2  text-gray-700 dark:text-gray-300"
                     }
                 >
                     {data.intro}

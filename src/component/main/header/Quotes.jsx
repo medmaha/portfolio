@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 
 let timeoutRef
 
-const QUOTE_TIMING = 3000
+const QUOTE_TIMING = 5000
 
 const quotesList = [
     {
@@ -80,7 +80,7 @@ export default function Quote() {
                         <path d="M10 5v5h2.75L11 13h2.25L15 10V5h-5zm-7 5h2.75L4 13h2.25L8 10V5H3v5z" />
                     </svg>
                 </span>
-                <span className="tracking-wider text.sm font-light text-center pt-1 dark:text-slate-400 text-slate-600">
+                <span className="tracking-wider text.sm font-light text-center pt-1 dark:text-gray-300 text-gray-700">
                     {quote}
                 </span>
                 <span className="dark:text-[#00ffffca] text-[#1b1bee]">
